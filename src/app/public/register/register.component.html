@@ -1,1 +1,32 @@
-<p>register works!</p>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+
+    </div>
+
+    <!-- Login Form -->
+    <form [formGroup]="form" (submit)="submit()">
+      <h1>Register!</h1>
+      <input type="text" formControlName="first_name" class="fadeIn second" placeholder="First Name">
+      <input type="text" formControlName="last_name" class="fadeIn second" placeholder="Last Name">
+      <input type="email" formControlName="email" class="fadeIn second" placeholder="Email">
+      <input type="password" formControlName="password" class="fadeIn third" placeholder="Password">
+      <input type="password" formControlName="password_confirmation" class="fadeIn third" placeholder="Password Confirmation">
+      <input type="submit" class="fadeIn fourth" value="Register" [disabled]="!form.valid">
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" href="#">Forgot Password?</a>
+    </div>
+
+  </div>
+</div>
