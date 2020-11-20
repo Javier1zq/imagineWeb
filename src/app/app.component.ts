@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 
 @Component({
@@ -6,9 +6,16 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'imagineWeb';
-
+export class AppComponent implements OnInit{
+  //title = 'imagineWeb';
+  loggedIn = false;
+  ngOnInit(){
+    this.loggedIn = localStorage.getItem('token') !== null;
+  }
+  logOut(){
+    localStorage.removeItem('token');
+    console.log(localStorage.getItem('token'))
+  }
 }
 
 
