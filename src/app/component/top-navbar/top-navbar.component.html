@@ -1,0 +1,14 @@
+<nav class="navbar navbar-expand-sm mb-5 navbar-custom">
+
+
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item active">
+      <a class="nav-link" style="color: white" routerLink="/">Home</a>
+    </li>
+  </ul>
+  <div class="navbar-nav">
+      <a class="nav-link" style="color: white" routerLink="/login" *ngIf="!loggedIn">Log In</a>
+      <a class="nav-link" style="color: white" routerLink="/" *ngIf="loggedIn" (click)="logOut()">Log Out</a>
+  </div>
+
+</nav>
