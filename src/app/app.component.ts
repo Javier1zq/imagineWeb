@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgwWowService } from 'ngx-wow';
 
 
 @Component({
@@ -7,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
+  constructor(private wowService: NgwWowService) {
+    this.wowService.init();
+  }
   //title = 'imagineWeb';
   loggedIn = false;
   ngOnInit(){

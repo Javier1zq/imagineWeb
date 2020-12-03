@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
-  selector: 'app-top-navbar',
-  templateUrl: './top-navbar.component.html',
-  styleUrls: ['./top-navbar.component.scss']
+  selector: 'app-navbar',
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.scss']
 })
 export class TopNavbarComponent implements OnInit {
 
@@ -12,6 +13,8 @@ export class TopNavbarComponent implements OnInit {
   loggedIn = false;
   ngOnInit(){
     this.loggedIn = localStorage.getItem('token') !== null;
+
+
   }
   logOut(){
     localStorage.removeItem('token');
