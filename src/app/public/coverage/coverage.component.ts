@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 export class CoverageComponent implements OnInit {
 
   form: FormGroup;
+  public successfulResponse = false;
+  public failedResponse = false;
   constructor(private fb: FormBuilder,
               private http: HttpClient,
               private router: Router) { }
@@ -34,18 +36,27 @@ export class CoverageComponent implements OnInit {
 
     };
 
-    this.http.post('http://localhost:8000/api/checkCoverageApi', data).subscribe(
+    this.http.post('http://localhost:8000/api/checkCoverageApi', data, {responseType: 'text'}).subscribe(
       (result: any) =>{
         console.log('success');
         console.log(result);
+        if (result=="found") {
+          this.successfulResponse = true;
+          this.failedResponse = false;
+        } else {
+          this.successfulResponse = false;
+          this.failedResponse = true;
+        }
+
         /*localStorage.setItem('token', result.access_token)
         this.router.navigate(['/secure']);
         console.log(result.access_token);*/
 
       },
       error =>{
-
         console.log(error);
+        console.log('fail');
+
       },
     );
   }

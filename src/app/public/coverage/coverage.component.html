@@ -6,7 +6,14 @@
       <input type="text" formControlName="street" class="fadeIn second" placeholder="street">
       <input type="number" formControlName="number" class="fadeIn third" placeholder="number">
       <input type="text" formControlName="town" class="fadeIn fourth" placeholder="town">
+      <br>
       <input type="submit" class="fadeIn fifth" value="Check coverage">
     </form>
+    <div *ngIf="successfulResponse" class="alert alert-success box-msg" role="alert">
+      <strong>Found</strong>
+    </div>
+    <div *ngIf="failedResponse" class="alert alert-danger box-msg" role="alert">
+      <strong>Not Found</strong>
+    </div>
   </div>
 </div>
