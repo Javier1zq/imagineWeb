@@ -1,0 +1,12 @@
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <form [formGroup]="form" (submit)="submit()">
+      <h1>Check coverage!</h1>
+      <input type="text" formControlName="street" class="fadeIn second" placeholder="street">
+      <input type="number" formControlName="number" class="fadeIn third" placeholder="number">
+      <input type="text" formControlName="town" class="fadeIn fourth" placeholder="town">
+      <input type="submit" class="fadeIn fifth" value="Check coverage">
+    </form>
+  </div>
+</div>

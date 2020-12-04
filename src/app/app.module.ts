@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import { TopNavbarComponent } from './component/navbar/navbar.component';
 import { FooterComponent } from './component/footer/footer.component';
 
+
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { NgwWowModule } from 'ngx-wow';
 //import { WOW } from 'wow.js';

@@ -32,12 +32,13 @@
 </nav>-->
 
 <!-- Navbar -->
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+
+<nav class="navbar navbar-expand-lg navbar-dark indigo fixed-top scrolling-navbar">
   <div class="container">
 
     <!-- Brand -->
-    <a class="navbar-brand" href="https://mdbootstrap.com/docs/jquery/" target="_blank">
-      <strong>MDB</strong>
+    <a class="navbar-brand" routerLink="/">
+      <img src="assets/img/Alogo.png" >
     </a>
 
     <!-- Collapse -->
@@ -52,38 +53,46 @@
       <!-- Left -->
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home
+          <a class="nav-link" routerLink="/">Home
             <span class="sr-only">(current)</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://mdbootstrap.com/docs/jquery/" target="_blank">About MDB</a>
+          <a class="nav-link" routerLink="/data">Movil</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://mdbootstrap.com/docs/jquery/getting-started/download/" target="_blank">Free
-            download</a>
+          <a class="nav-link" routerLink="/plan2">Movil+Fibra</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://mdbootstrap.com/education/bootstrap/" target="_blank">Free tutorials</a>
+          <a class="nav-link" routerLink="/fiber">Fibra</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/tv">TV</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/coverage">Cobertura</a>
+        </li>
+
       </ul>
 
       <!-- Right -->
       <ul class="navbar-nav nav-flex-icons">
         <li class="nav-item">
-          <a href="https://www.facebook.com/mdbootstrap" class="nav-link" target="_blank">
+          <a href="https://www.facebook.com" class="nav-link" target="_blank">
             <i class="fab fa-facebook-f"></i>
           </a>
         </li>
         <li class="nav-item">
-          <a href="https://twitter.com/MDBootstrap" class="nav-link" target="_blank">
+          <a href="https://twitter.com" class="nav-link" target="_blank">
             <i class="fab fa-twitter"></i>
           </a>
         </li>
         <li class="nav-item">
-          <a href="https://github.com/mdbootstrap/bootstrap-material-design" class="nav-link border border-light rounded"
-            target="_blank">
-            <i class="fab fa-github mr-2"></i>MDB GitHub
+          <a routerLink="/login" *ngIf="!loggedIn" class="nav-link border border-light rounded">
+            <i class="fas fa-user mr-2"></i>Log In
+          </a>
+          <a routerLink="/" *ngIf="loggedIn" (click)="logOut()" class="nav-link border border-light rounded">
+            <i class="fas fa-user mr-2"></i>Log Out
           </a>
         </li>
       </ul>
@@ -92,9 +101,6 @@
 
   </div>
 </nav>
-<br>
-<br>
-<br>
-<br>
+
 
 <!-- Navbar -->

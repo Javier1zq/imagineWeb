@@ -11,6 +11,7 @@ import { FiberComponent } from './fiber/fiber.component';
 import { DataComponent } from './data/data.component';
 import { TvComponent } from './tv/tv.component';
 import { Plan2Component } from './plan2/plan2.component';
+import { CoverageComponent } from './coverage/coverage.component';
 
 
 
@@ -24,7 +25,8 @@ import { Plan2Component } from './plan2/plan2.component';
     FiberComponent,
     DataComponent,
     TvComponent,
-    Plan2Component
+    Plan2Component,
+    CoverageComponent
   ],
   imports: [
     CommonModule,

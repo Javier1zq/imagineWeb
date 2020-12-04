@@ -5,7 +5,11 @@ import { LoginComponent } from './public/login/login.component';
 import { RegisterComponent } from './public/register/register.component';
 import { PublicComponent } from './public/public.component';
 import { SecureComponent } from './secure/secure.component';
-
+import { DataComponent } from './public/data/data.component';
+import { FiberComponent } from './public/fiber/fiber.component';
+import { TvComponent } from './public/tv/tv.component';
+import { Plan2Component } from './public/plan2/plan2.component';
+import { CoverageComponent } from './public/coverage/coverage.component';
 const routes: Routes = [
 
   {
@@ -14,8 +18,12 @@ const routes: Routes = [
      children:[
        {path: '', component: HomeComponent},
        {path: 'login', component: LoginComponent},
-       {path: 'register', component: RegisterComponent}
-
+       {path: 'register', component: RegisterComponent},
+       {path: 'data', component: DataComponent},
+       {path: 'fiber', component: FiberComponent},
+       {path: 'tv', component: TvComponent},
+       {path: 'plan2', component: Plan2Component},
+       {path: 'coverage', component: CoverageComponent}
      ]
     },
   {path: 'secure', component: SecureComponent}
