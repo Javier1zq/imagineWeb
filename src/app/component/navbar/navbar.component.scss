@@ -1,46 +1,8 @@
-/*.navbarCustom{
-  background: #152F4F;
-  color:white;
-
-  .links{
-    cursor: pointer;
-    ul {list-style-type: none;}
-    li a{
-      color: white;
-      transition: color .2s;
-      &:hover{
-        text-decoration:none;
-        color:#4180CB;
-        }
-    }
-  }
-  .nav-link{
-    cursor: pointer;
-    ul {list-style-type: none;}
-    li a{
-      color: white;
-      transition: color .2s;
-      &:hover{
-        text-decoration:none;
-        color:#4180CB;
-        }
-    }
-
-  }
 
 
-}*/
-@media (min-width: 800px) and (max-width: 850px) {
-  .navbar:not(.top-nav-collapse) {
-      background: #1C2331!important;
-  }
-}
 
-.carousel,
-.carousel .carousel-inner,
-.carousel .carousel-inner .active,
-.carousel .carousel-inner .carousel-item,
-.view,
-body,
-html{height:100%}.navbar{background-color:rgba(0,0,0,.2)}.page-footer,
-.top-nav-collapse{background-color:#1C2331}@media only screen and (max-width:768px){.navbar{background-color:#1C2331}}
+$theme-colors: ( "primary": #001B6A, "secondary": #00CF83, "customcolor": red);
+
+@import "./node_modules/bootstrap/scss/bootstrap.scss";
+
+
