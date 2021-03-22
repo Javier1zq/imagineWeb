@@ -23,12 +23,12 @@
       <input type="password" formControlName="password_confirmation" class="fadeIn third" placeholder="Password Confirmation">
       <input type="submit" class="fadeIn fourth" value="Register" [disabled]="form.invalid">
     </form>
-    <div *ngIf="successfulResponse" class="alert alert-success box-msg" role="alert">
+    <div *ngIf="successfulResponse==true" class="alert alert-success box-msg" role="alert">
       <strong>Resgistry Successful, please validate your email</strong>
     </div>
-    <div *ngIf="failedResponse" class="alert alert-danger box-msg" role="alert">
+    <div *ngIf="failedResponse==true" class="alert alert-danger box-msg" role="alert">
       <strong>Invalid Form</strong>
-
+    </div>
     <!-- Remind Passowrd -->
     <div id="formFooter">
       <a class="underlineHover" href="#">Forgot Password?</a>
