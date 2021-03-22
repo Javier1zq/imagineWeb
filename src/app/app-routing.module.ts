@@ -10,6 +10,7 @@ import { FiberComponent } from './public/fiber/fiber.component';
 import { TvComponent } from './public/tv/tv.component';
 import { Plan2Component } from './public/plan2/plan2.component';
 import { CoverageComponent } from './public/coverage/coverage.component';
+import { TopNavbarComponent } from './component/navbar/navbar.component';
 const routes: Routes = [
 
   {
@@ -23,7 +24,8 @@ const routes: Routes = [
        {path: 'fiber', component: FiberComponent},
        {path: 'tv', component: TvComponent},
        {path: 'plan2', component: Plan2Component},
-       {path: 'coverage', component: CoverageComponent}
+       {path: 'coverage', component: CoverageComponent},
+       {path: 'navbar', component: TopNavbarComponent}
      ]
     },
   {path: 'secure', component: SecureComponent}

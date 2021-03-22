@@ -55,7 +55,7 @@ export class CoverageComponent implements OnInit {
       },
       error =>{
         console.log(error);
-        console.log('fail');
+        console.log('error');
 
       },
     );

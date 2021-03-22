@@ -89,10 +89,10 @@
           </a>
         </li>
         <li class="nav-item">
-          <a routerLink="/login" *ngIf="!loggedIn" class="nav-link border border-light rounded">
+          <a routerLink="/login" *ngIf='!(authService.isLoggedIn$ | async)' class="nav-link border border-light rounded">
             <i class="fas fa-user mr-2"></i>Log In
           </a>
-          <a routerLink="/" *ngIf="loggedIn" (click)="logOut()" class="nav-link border border-light rounded">
+          <a routerLink="/" *ngIf='authService.isLoggedIn$ | async' (click)='authService.logout()' class="nav-link border border-light rounded">
             <i class="fas fa-user mr-2"></i>Log Out
           </a>
         </li>

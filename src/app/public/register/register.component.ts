@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
 export class RegisterComponent implements OnInit {
 
   form: FormGroup;
+  public successfulResponse = false;
+  public failedResponse = false;
   constructor(private fb: FormBuilder,
               private http: HttpClient,
               private router: Router) { }
@@ -19,6 +21,7 @@ export class RegisterComponent implements OnInit {
       first_name:['',Validators.required],
       last_name:['',Validators.required],
       email:['',[Validators.required,Validators.email]],
+      DNI:['',Validators.required, Validators.minLength(9), Validators.maxLength(9)],
       password:['',Validators.required],
       password_confirmation:['',Validators.required]
     });
@@ -28,10 +31,14 @@ export class RegisterComponent implements OnInit {
     this.http.post('http://localhost:8000/api/register', formData).subscribe(
       (result) =>{
         console.log(result);
+        this.successfulResponse = true;
+        this.failedResponse = false;
       },
       error =>{
         console.log(error);
-        console.log('hello');
+        console.log('error');
+        this.successfulResponse = false;
+        this.failedResponse = true;
       }
     )
   };

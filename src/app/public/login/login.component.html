@@ -15,10 +15,20 @@
     <!-- Login Form -->
     <form [formGroup]="form" (submit)="submit()">
       <h1>Login!</h1>
-      <input type="email" formControlName="email" class="fadeIn second" placeholder="email">
-      <input type="text" formControlName="password" class="fadeIn third" placeholder="password">
+      <input type="email" formControlName="email" class="fadeIn second" placeholder="Email">
+      <input type="password" formControlName="password" class="fadeIn third" placeholder="Password">
       <input type="submit" class="fadeIn fourth" value="Log In">
     </form>
+      <div *ngIf="successfulResponse" class="alert alert-success box-msg" role="alert">
+        <strong>Found</strong>
+      </div>
+      <div *ngIf="failedResponse" class="alert alert-danger box-msg" role="alert">
+        <strong>Invalid Credentials</strong>
+        <br>
+      <h2>Haven't registered yet?</h2>
+      <input type="submit" class="fadeIn fourth" value="Register" routerLink="/register">
+
+
 
     <!-- Remind Passowrd -->
     <div id="formFooter">
