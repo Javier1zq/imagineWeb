@@ -1,3 +1,26 @@
 <p *ngIf="user">
-  Hi {{user.first_name}} {{user.last_name}}
+  Welcome {{user.first_name}} {{user.last_name}}
 </p>
+<p *ngIf="servicebool">
+  You are currently not subsribed to any services
+</p>
+<p *ngIf="databool">
+  Your data consumption is not being monitored at this time
+</p>
+<div>
+  <canvas *ngIf="datachartbool" baseChart
+  [data]="doughnutChartData"
+  [labels]="doughnutChartLabels"
+  [chartType]="doughnutChartType"
+  [colors]="chartColors"></canvas>
+</div>
+<p *ngIf="fiberstring">{{fiberstring}}</p>
+<p *ngIf="phonestring">{{phonestring}}</p>
+<div style="display: block">
+  <canvas baseChart
+  [datasets]="barChartData"
+  [labels]="barChartLabels"
+  [options]="barChartOptions"
+  [legend]="barChartLegend"
+  [chartType]="barChartType"></canvas>
+</div>

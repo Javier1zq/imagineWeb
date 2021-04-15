@@ -10,7 +10,7 @@ import { RouterModule } from '@angular/router';
 import { TopNavbarComponent } from './component/navbar/navbar.component';
 import { FooterComponent } from './component/footer/footer.component';
 
-
+import { ChartsModule } from 'ng2-charts';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { NgwWowModule } from 'ngx-wow';
 //import { WOW } from 'wow.js';
@@ -29,6 +29,7 @@ import { NgwWowModule } from 'ngx-wow';
     RouterModule,
     MDBBootstrapModule.forRoot(),
     NgwWowModule,
+    ChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -20,8 +20,10 @@
     "lib": [
       "es2018",
       "dom"
-    ]
-    
+    ],
+    "resolveJsonModule": true,
+    "esModuleInterop": true
+
   },
   "angularCompilerOptions": {
     "strictInjectionParameters": true,

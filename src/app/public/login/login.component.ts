@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
       password: formData.password,
       grant_type: 'password',
       client_id: 2,
-      client_secret: 'dRj50MW592uOOqa5kVZLUPusnt8quCukz5zGNEno',
+      client_secret: 'RauG1epphlwk6gwX0U6ABCRku94Gy05ZiYDyvvQy',
       scope: '*'
     };
 
@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
 
     this.http.post('http://localhost:8000/api/userIsVerified', formData).subscribe(
       (result) =>{
-        console.log(result);
+        //console.log(result);
         if (result==1) {
           this.http.post('http://localhost:8000/oauth/token', data).subscribe(
             (result: any) =>{
@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
               console.log(result);*/
 
               localStorage.setItem('token', result.access_token)
-              console.log(result.access_token);
+              //console.log(result.access_token);
               this.successfulResponse = true;
               this.failedResponse = false;
 
