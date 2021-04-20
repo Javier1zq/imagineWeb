@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
   form: FormGroup;
   public successfulResponse = false;
   public failedResponse = false;
+  public userNotVerified = false;
   constructor(private fb: FormBuilder,
               private http: HttpClient,
               private router: Router,
@@ -70,6 +71,7 @@ export class LoginComponent implements OnInit {
         }
         else if (result==0) {
           console.log('User not verified');
+          this.userNotVerified =true;
         }
         else{
           this.failedResponse = true;

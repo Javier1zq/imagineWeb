@@ -24,9 +24,14 @@
       </div>
       <div *ngIf="failedResponse" class="alert alert-danger box-msg" role="alert">
         <strong>Invalid Credentials</strong>
-      </div>
         <br>
+      </div>
 
+      <div *ngIf="userNotVerified" class="alert alert-danger box-msg" role="alert">
+        <strong>User is not verified, please check your email</strong>
+        <br>
+      </div>
+      <br>
       <h2>Haven't registered yet?</h2>
       <input type="submit" class="fadeIn fourth" value="Register" routerLink="/register">
 

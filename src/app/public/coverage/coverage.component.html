@@ -11,6 +11,9 @@
     </form>
     <div *ngIf="successfulResponse" class="alert alert-success box-msg" role="alert">
       <strong>Found</strong>
+      <br>
+      <a routerLink="/register"  class="nav-link border border-light rounded">Registrate!</a>
+
     </div>
     <div *ngIf="failedResponse" class="alert alert-danger box-msg" role="alert">
       <strong>Not Found</strong>

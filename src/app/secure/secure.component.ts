@@ -6,7 +6,8 @@ import * as Chart from 'chart.js';
 import { AuthService } from '../authservice.service';
 import { Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
-
+import jsPDF from 'jspdf';
+import { toBase64String } from '@angular/compiler/src/output/source_map';
 
 @Component({
   selector: 'app-secure',
@@ -39,6 +40,7 @@ export class SecureComponent implements OnInit {
   user: any;
   services: Services[];
   data: Data[];
+  pdfjson: PDFJSON;
   chart = Chart;
   datachartbool=false;
   servicebool=false;
@@ -51,6 +53,42 @@ export class SecureComponent implements OnInit {
               private router: Router,
               public authService: AuthService) { }
 
+
+  public generateInvoice(){
+    const headers = new HttpHeaders({
+      'Accept': 'application/json',
+      'Authorization': `Bearer ${localStorage.getItem('token')}`
+
+    });
+    this.http.post('http://localhost:8000/api/generateInvoice', this.user,{headers: headers}).subscribe(
+          result=>{
+            console.log("This is the base64 pdf:");
+            console.log(result);
+
+
+            if (result) {
+              var pdfjson = <PDFJSON>result;
+
+              var pdf = pdfjson.pdf;
+              const linkSource = `data:application/pdf;base64,${pdf}`;
+              const downloadLink = document.createElement("a");
+              const fileName = "invoice.pdf";
+
+              downloadLink.href = linkSource;
+              downloadLink.download = fileName;
+              downloadLink.click();
+            }
+
+
+
+
+          },
+
+          err=>{
+            console.log(err);
+          }
+        );
+  }
   ngOnInit(): void {
 
     const headers = new HttpHeaders({
@@ -92,7 +130,7 @@ export class SecureComponent implements OnInit {
                       if (this.services[0].data) {
                         this.datachartbool=true;
                         this.doughnutChartLabels = ['Data used (GigaBytes)', 'Remaining data (GigaBytes)'];
-                        this.doughnutChartData = [this.data[0].data/1000, this.services[0].data_type/1000];
+                        this.doughnutChartData = [this.data[0].data/1000, (this.services[0].data_type/1000)-this.data[0].data/1000];
 
                       }
 
@@ -158,10 +196,12 @@ export class Services{
 }
 export class Data{
   DNI: string;
-  month: number;
-  year: number;
+  date: Date;
   data: number;
   phone_minutes:number;
   messages:number;
   fiber:number;
+}
+export class PDFJSON{
+  pdf: string;
 }

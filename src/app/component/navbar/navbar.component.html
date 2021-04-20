@@ -78,6 +78,7 @@
 
       <!-- Right -->
       <ul class="navbar-nav nav-flex-icons">
+
         <li class="nav-item">
           <a href="https://www.facebook.com" class="nav-link" target="_blank">
             <i class="fab fa-facebook-f"></i>
@@ -89,11 +90,16 @@
           </a>
         </li>
         <li class="nav-item">
+          <a routerLink="/secure" *ngIf='(authService.isLoggedIn$ | async)' class="nav-link border border-light rounded">
+            <i class="fas fa-user mr-2"></i>Profile
+          </a>
+        </li>
+        <li class="nav-item">
           <a routerLink="/login" *ngIf='!(authService.isLoggedIn$ | async)' class="nav-link border border-light rounded">
-            <i class="fas fa-user mr-2"></i>Log In
+            <i class="far fa-user mr-2"></i>Log In
           </a>
           <a routerLink="/" *ngIf='authService.isLoggedIn$ | async' (click)='authService.logout()' class="nav-link border border-light rounded">
-            <i class="fas fa-user mr-2"></i>Log Out
+            <i class="fas fa-user-alt-slash mr-2"></i>Log Out
           </a>
         </li>
       </ul>
