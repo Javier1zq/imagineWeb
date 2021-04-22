@@ -1,0 +1,45 @@
+.fas {
+  //font-size: 32px;
+	color: #001B6A;
+  //display: block;
+	background: -webkit-linear-gradient(#001B6A, #00CF83);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+  transform: translateY(-25%);
+}
+
+.page-header {
+	font-size: 32px;
+	margin: 20px;
+	color: #001B6A;
+	display: block;
+	background: -webkit-linear-gradient(#001B6A, #00CF83);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+.fontawesome-icon-list {
+	text-align: center;
+}
+.icon {
+	background-color: #fff;
+	border: 1px solid #eee;
+	text-align: center;
+	width: 100px;
+	height: 100px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	margin: 10px;
+	transition: all .2s;
+	&:hover {
+		box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.15);
+	}
+}
+
+
+
+
+$theme-colors: ( "primary": #001B6A, "secondary": #00CF83, "customcolor": red);
+
+@import "./node_modules/bootstrap/scss/bootstrap.scss";
+
