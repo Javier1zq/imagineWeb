@@ -36,7 +36,7 @@ export class CoverageComponent implements OnInit {
 
     };
 
-    this.http.post('http://localhost:8000/api/checkCoverageApi', data, {responseType: 'text'}).subscribe(
+    this.http.post('http://192.168.0.16:8000/api/checkCoverageApi', data, {responseType: 'text'}).subscribe(
       (result: any) =>{
         console.log('success');
         console.log(result);
@@ -47,11 +47,6 @@ export class CoverageComponent implements OnInit {
           this.successfulResponse = false;
           this.failedResponse = true;
         }
-
-        /*localStorage.setItem('token', result.access_token)
-        this.router.navigate(['/secure']);
-        console.log(result.access_token);*/
-
       },
       error =>{
         console.log(error);

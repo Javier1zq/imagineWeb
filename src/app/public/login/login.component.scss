@@ -354,3 +354,11 @@ input[type=password] {
 #icon {
 	width: 60%;
 }
+.errors {
+  font-size: small;
+  color: red;
+  background: var(red);
+  padding-left: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}

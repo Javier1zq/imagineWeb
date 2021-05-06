@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { AuthService } from '../../authservice.service';
@@ -22,8 +22,8 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.form= this.fb.group({
-      email:'',
-      password:''
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
   submit(){
@@ -39,28 +39,22 @@ export class LoginComponent implements OnInit {
 
 
 
-    this.http.post('http://localhost:8000/api/userIsVerified', formData).subscribe(
+    this.http.post('http://192.168.0.16:8000/api/userIsVerified', formData).subscribe(
       (result) =>{
         //console.log(result);
         if (result==1) {
-          this.http.post('http://localhost:8000/oauth/token', data).subscribe(
+          this.http.post('http://192.168.0.16:8000/oauth/token', data).subscribe(
             (result: any) =>{
               /*console.log('success');
               console.log(result);*/
-
               localStorage.setItem('token', result.access_token)
               //console.log(result.access_token);
               this.successfulResponse = true;
               this.failedResponse = false;
-
               this.authService.login();
-
-
-
-              this.router.navigate(['/secure']);
+              this.router.navigate(['/profile']);
             },
             error =>{
-
               console.log('Your credentials are incorrect. Please try again');
               console.log('error 401 -> 400 due to league/oauth2-server');
               console.log(error);
@@ -76,39 +70,17 @@ export class LoginComponent implements OnInit {
         else{
           this.failedResponse = true;
         }
-
-
       },
       error =>{
         console.log(error);
       }
     )
-      /*
-    this.http.post('http://localhost:8000/oauth/token', data).subscribe(
-      (result: any) =>{
-        /*console.log('success');
-        console.log(result);*//*
+  }
+  get email() {
+    return this.form.get('email');
+  }
 
-        localStorage.setItem('token', result.access_token)
-        console.log(result.access_token);
-        this.successfulResponse = true;
-        this.failedResponse = false;
-
-        this.authService.login();
-
-
-
-        this.router.navigate(['/secure']);
-      },
-      error =>{
-
-        console.log('Your credentials are incorrect. Please try again');
-        console.log('error 401 -> 400 due to league/oauth2-server');
-        console.log(error);
-        this.successfulResponse = false;
-        this.failedResponse = true;
-      },
-    );*/
-
+  get password() {
+    return this.form.get('password');
   }
 }

@@ -12,6 +12,7 @@ import { DataComponent } from './data/data.component';
 import { TvComponent } from './tv/tv.component';
 import { Plan2Component } from './plan2/plan2.component';
 import { CoverageComponent } from './coverage/coverage.component';
+import { VerifiedComponent } from './verified/verified.component';
 
 
 
@@ -26,7 +27,8 @@ import { CoverageComponent } from './coverage/coverage.component';
     DataComponent,
     TvComponent,
     Plan2Component,
-    CoverageComponent
+    CoverageComponent,
+    VerifiedComponent
   ],
   imports: [
     CommonModule,

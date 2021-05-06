@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ibanValidator } from "ngx-iban";
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -16,19 +17,25 @@ export class RegisterComponent implements OnInit {
               private http: HttpClient,
               private router: Router) { }
 
+
   ngOnInit(): void {
     this.form= this.fb.group({
       first_name:['',[Validators.required]],
       last_name:['',[Validators.required]],
-      email:['',[Validators.required],[Validators.email]],
-      DNI:['',[Validators.required], [Validators.minLength(9)], [Validators.maxLength(9)]],
-      password:['',[Validators.required]],
-      password_confirmation:['',[Validators.required]]
-    });
+      email:['',[Validators.required, Validators.email]],
+      DNI:['',[Validators.required, Validators.minLength(9), Validators.maxLength(9)]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      password_confirmation:['',[Validators.required]],
+      dataPlan:['0',[Validators.required]],
+      fiberPlan:['0',[Validators.required]],
+      tvPlan:[''],
+      iban:['',[Validators.required, ibanValidator("NL")]],
+    }, {})
   }
   submit(){
     const formData = this.form.getRawValue();
-    this.http.post('http://localhost:8000/api/register', formData).subscribe(
+    console.log(formData);
+    this.http.post('http://192.168.0.16:8000/api/register', formData).subscribe(
       (result) =>{
         console.log(result);
         this.successfulResponse = true;
@@ -42,4 +49,26 @@ export class RegisterComponent implements OnInit {
       }
     )
   };
+  get email() {
+    return this.form.get('email');
+  }
+  get password() {
+    return this.form.get('password');
+  }
+  get first_name() {
+    return this.form.get('first_name');
+  }
+  get last_name() {
+    return this.form.get('last_name');
+  }
+  get password_confirmation() {
+    return this.form.get('password_confirmation');
+  }
+  get DNI() {
+    return this.form.get('DNI');
+  }
+  get iban() {
+    return this.form.get('iban');
+  }
+
 }

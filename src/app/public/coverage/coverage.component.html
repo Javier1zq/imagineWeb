@@ -2,21 +2,21 @@
 <div class="wrapper fadeInDown">
   <div id="formContent">
     <form [formGroup]="form" (submit)="submit()">
-      <h1>Check coverage!</h1>
-      <input type="text" formControlName="street" class="fadeIn second" placeholder="street">
-      <input type="number" formControlName="number" class="fadeIn third" placeholder="number">
-      <input type="text" formControlName="town" class="fadeIn fourth" placeholder="town">
+      <h1>Revisa tu covertura!</h1>
+      <input type="text" formControlName="street" class="fadeIn second" placeholder="Calle">
+      <input type="number" formControlName="number" class="fadeIn third" placeholder="Número">
+      <input type="text" formControlName="town" class="fadeIn fourth" placeholder="Localidad">
       <br>
       <input type="submit" class="fadeIn fifth" value="Check coverage">
     </form>
     <div *ngIf="successfulResponse" class="alert alert-success box-msg" role="alert">
-      <strong>Found</strong>
+      <strong>¡Encontrado!</strong>
       <br>
       <a routerLink="/register"  class="nav-link border border-light rounded">Registrate!</a>
 
     </div>
     <div *ngIf="failedResponse" class="alert alert-danger box-msg" role="alert">
-      <strong>Not Found</strong>
+      <strong>¡No lo hemos encontrado!</strong>
     </div>
   </div>
 </div>

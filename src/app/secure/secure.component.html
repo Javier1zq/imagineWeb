@@ -31,19 +31,19 @@
   <h1 class="display-3 text-center">Welcome to your profile, {{user?.first_name}} {{user?.last_name}}</h1>
   <br><br>
   <div *ngIf="servicebool">
-    <br><br>
-    <p >
+    <br><br><br><br>
+    <h2 class="display-3 text-center">
       You are currently not subsribed to any services
-    </p>
+    </h2>
   </div>
   <div *ngIf="databool">
-    <br><br>
-    <p >
+    <br><br><br><br>
+    <h2 class="display-3 text-center">
       Your data consumption is not being monitored at this time
-    </p>
+    </h2>
   </div>
   <nav>
-    <div class="nav nav-tabs justify-content-center wow fadeIn" id="nav-tab" role="tablist">
+    <div class="nav nav-tabs justify-content-center wow fadeIn" id="nav-tab" role="tablist"  *ngIf="!databool">
       <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Consumo</a>
       <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Facturacion</a>
     </div>

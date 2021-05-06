@@ -11,6 +11,7 @@ import { TvComponent } from './public/tv/tv.component';
 import { Plan2Component } from './public/plan2/plan2.component';
 import { CoverageComponent } from './public/coverage/coverage.component';
 import { TopNavbarComponent } from './component/navbar/navbar.component';
+import { VerifiedComponent } from './public/verified/verified.component';
 const routes: Routes = [
 
   {
@@ -25,10 +26,11 @@ const routes: Routes = [
        {path: 'tv', component: TvComponent},
        {path: 'plan2', component: Plan2Component},
        {path: 'coverage', component: CoverageComponent},
-       {path: 'navbar', component: TopNavbarComponent}
+       {path: 'navbar', component: TopNavbarComponent},
+       {path: 'verified', component: VerifiedComponent}
      ]
     },
-  {path: 'secure', component: SecureComponent}
+  {path: 'profile', component: SecureComponent}
 ];
 
 @NgModule({

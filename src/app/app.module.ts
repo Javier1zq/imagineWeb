@@ -13,6 +13,8 @@ import { FooterComponent } from './component/footer/footer.component';
 import { ChartsModule } from 'ng2-charts';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { NgwWowModule } from 'ngx-wow';
+import { NgxIbanModule } from "ngx-iban";
+import { ReactiveFormsModule } from '@angular/forms';
 //import { WOW } from 'wow.js';
 
 @NgModule({
@@ -30,6 +32,8 @@ import { NgwWowModule } from 'ngx-wow';
     MDBBootstrapModule.forRoot(),
     NgwWowModule,
     ChartsModule,
+    NgxIbanModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

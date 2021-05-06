@@ -16,18 +16,7 @@ import { toBase64String } from '@angular/compiler/src/output/source_map';
 })
 export class SecureComponent implements OnInit {
 
-  public barChartOptions = {
-    scaleShowVerticalLines: false,
-    responsive: true
-  };
-  public barChartLabels = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
-  public barChartType = 'bar' as 'bar';
-  public barChartLegend = true;
 
-  public barChartData = [
-    {data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A'},
-    {data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B'}
-  ];
   public doughnutChartLabels = [''];
   public doughnutChartData = [0];
   public doughnutChartType = 'doughnut' as 'doughnut';
@@ -58,32 +47,22 @@ export class SecureComponent implements OnInit {
     const headers = new HttpHeaders({
       'Accept': 'application/json',
       'Authorization': `Bearer ${localStorage.getItem('token')}`
-
     });
-    this.http.post('http://localhost:8000/api/generateInvoice', this.user,{headers: headers}).subscribe(
+    this.http.post('http://192.168.0.16:8000/api/generateInvoice', this.user,{headers: headers}).subscribe(
           result=>{
             console.log("This is the base64 pdf:");
             console.log(result);
-
-
             if (result) {
               var pdfjson = <PDFJSON>result;
-
               var pdf = pdfjson.pdf;
               const linkSource = `data:application/pdf;base64,${pdf}`;
               const downloadLink = document.createElement("a");
               const fileName = "invoice.pdf";
-
               downloadLink.href = linkSource;
               downloadLink.download = fileName;
               downloadLink.click();
             }
-
-
-
-
           },
-
           err=>{
             console.log(err);
           }
@@ -97,22 +76,22 @@ export class SecureComponent implements OnInit {
 
     });
     //console.log(localStorage.getItem('token'));
-    this.http.get('http://localhost:8000/api/user',{headers: headers}).subscribe(
+    this.http.get('http://192.168.0.16:8000/api/user',{headers: headers}).subscribe(
       result=>{
         this.user=result;
         console.log("This is the user:");
         console.log(this.user.DNI);
 
-        this.http.post('http://localhost:8000/api/services', this.user,{headers: headers}).subscribe(
+        this.http.post('http://192.168.0.16:8000/api/services', this.user,{headers: headers}).subscribe(
           result=>{
-            this.services=<Services[]>result
-            console.log("this is the result of get api/services: ")
+            this.services=<Services[]>result;
+            console.log("this is the result of get api/services: ");
             console.log(result);
-            console.log("this is the result of this.services: ")
+            console.log("this is the result of this.services: ");
             console.log(this.services);
 
-              if (this.services!=null) {
-                console.log("this is the result of data1: ")
+              if (this.services[0]!=null && this.services[0]!=undefined) {
+                console.log("this is the result of data1: ");
                 let data1 =this.services[0].data_type;
                 console.log(data1);
 
@@ -120,13 +99,13 @@ export class SecureComponent implements OnInit {
 
 
 
-                this.http.post('http://localhost:8000/api/data', this.user,{headers: headers}).subscribe(
+                this.http.post('http://192.168.0.16:8000/api/data', this.user,{headers: headers}).subscribe(
                   result=>{
                     this.data=<Data[]>result
-                    console.log("this is the result of get api/data: ")
+                    console.log("this is the result of get api/data: ");
                     console.log(result);
 
-                    if (this.data!=null) {
+                    if (this.data[0]!=null && this.data[0]!=undefined) {
                       if (this.services[0].data) {
                         this.datachartbool=true;
                         this.doughnutChartLabels = ['Data used (GigaBytes)', 'Remaining data (GigaBytes)'];
@@ -189,18 +168,18 @@ export class Services{
   data: boolean;
   data_type: number;
   fiber: boolean;
-  fiber_type:number;
-  phone:boolean;
-  phone_type:number;
-  tv:boolean;
+  fiber_type: number;
+  phone: boolean;
+  phone_type: number;
+  tv: boolean;
 }
 export class Data{
   DNI: string;
   date: Date;
   data: number;
-  phone_minutes:number;
-  messages:number;
-  fiber:number;
+  phone_minutes: number;
+  messages: number;
+  fiber: number;
 }
 export class PDFJSON{
   pdf: string;

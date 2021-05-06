@@ -16,17 +16,21 @@
     <form [formGroup]="form" (submit)="submit()">
       <h1>Login!</h1>
       <input type="email" formControlName="email" class="fadeIn second" placeholder="Email">
+      <div *ngIf="email && (email.dirty || email.touched) && email.errors" class="errors">
+        <span *ngIf="email.errors?.required">Email is required</span>
+        <span *ngIf="email.errors?.email">Email is invalid</span>
+      </div>
       <input type="password" formControlName="password" class="fadeIn third" placeholder="Password">
+      <div *ngIf="password && (password.dirty || password.touched) && password.errors" class="errors">
+        <span *ngIf="password.errors?.required">Password is required</span>
+        <span *ngIf="password.errors?.minlength">Password needs to be 6 characters</span>
+      </div>
       <input type="submit" class="fadeIn fourth" value="Log In">
     </form>
-      <div *ngIf="successfulResponse" class="alert alert-success box-msg" role="alert">
-        <strong>Found</strong>
-      </div>
       <div *ngIf="failedResponse" class="alert alert-danger box-msg" role="alert">
         <strong>Invalid Credentials</strong>
         <br>
       </div>
-
       <div *ngIf="userNotVerified" class="alert alert-danger box-msg" role="alert">
         <strong>User is not verified, please check your email</strong>
         <br>
