@@ -36,7 +36,7 @@ export class CoverageComponent implements OnInit {
 
     };
 
-    this.http.post('http://192.168.0.16:8000/api/checkCoverageApi', data, {responseType: 'text'}).subscribe(
+    this.http.post('http://5.225.184.114:8000/api/checkCoverageApi', data, {responseType: 'text'}).subscribe(
       (result: any) =>{
         console.log('success');
         console.log(result);

@@ -13,6 +13,7 @@ import { TvComponent } from './tv/tv.component';
 import { Plan2Component } from './plan2/plan2.component';
 import { CoverageComponent } from './coverage/coverage.component';
 import { VerifiedComponent } from './verified/verified.component';
+import { RegisterNoFiberComponent } from './register-no-fiber/register-no-fiber.component';
 
 
 
@@ -28,7 +29,8 @@ import { VerifiedComponent } from './verified/verified.component';
     TvComponent,
     Plan2Component,
     CoverageComponent,
-    VerifiedComponent
+    VerifiedComponent,
+    RegisterNoFiberComponent
   ],
   imports: [
     CommonModule,

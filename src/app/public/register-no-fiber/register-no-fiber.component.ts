@@ -4,11 +4,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ibanValidator } from "ngx-iban";
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  selector: 'app-register-no-fiber',
+  templateUrl: './register-no-fiber.component.html',
+  styleUrls: ['./register-no-fiber.component.scss']
 })
-export class RegisterComponent implements OnInit {
+export class RegisterNoFiberComponent implements OnInit {
 
   form: FormGroup;
   public successfulResponse = false;

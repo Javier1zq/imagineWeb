@@ -1,0 +1,150 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+
+    </div>
+
+    <!-- Login Form -->
+
+    <form [formGroup]="form" (submit)="submit()">
+      <br><h1 class="text-center">¡Registro!</h1><br>
+      <input type="text" formControlName="first_name" class="fadeIn second" placeholder="Nombre">
+      <div *ngIf="first_name && (first_name.dirty || first_name.touched) && first_name.errors" class="errors">
+        <span *ngIf="first_name.errors?.required">El nombre es obligatorio</span>
+      </div>
+      <input type="text" formControlName="last_name" class="fadeIn second" placeholder="Apellidos">
+      <div *ngIf="last_name && (last_name.dirty || last_name.touched) && last_name.errors" class="errors">
+        <span *ngIf="last_name.errors?.required">El nombre completo es obligatorio</span>
+      </div>
+      <input type="text" formControlName="DNI" class="fadeIn third" placeholder="DNI">
+      <div *ngIf="DNI && (DNI.dirty || DNI.touched) && DNI.errors" class="errors">
+        <span *ngIf="DNI.errors?.required">El DNI es obligatorio</span>
+        <span *ngIf="DNI.errors?.minlength">DNI debe tener 9 caracteres</span>
+        <span *ngIf="DNI.errors?.maxlength">DNI debe tener 9 caracteres</span>
+      </div>
+      <input type="email" formControlName="email" class="fadeIn second" placeholder="Email">
+      <div *ngIf="email && (email.dirty || email.touched) && email.errors" class="errors">
+        <span *ngIf="email.errors?.required">Email is required</span>
+        <span *ngIf="email.errors?.email">Email is invalid</span>
+      </div>
+      <input type="password" formControlName="password" class="fadeIn third" placeholder="Password">
+      <div *ngIf="password && (password.dirty || password.touched) && password.errors" class="errors">
+        <span *ngIf="password.errors?.required">Password is required</span>
+        <span *ngIf="password.errors?.minlength">Password needs to be 6 characters</span>
+      </div>
+      <input type="password" formControlName="password_confirmation" class="fadeIn third" placeholder="Password Confirmation">
+      <div *ngIf="password_confirmation && (password_confirmation.dirty || password_confirmation.touched) && password_confirmation.errors" class="errors">
+        <span *ngIf="password != password_confirmation">La contraseña debe ser igual</span>
+      </div>
+      <input type="text" formControlName="iban" class="fadeIn third" placeholder="IBAN">
+      <div *ngIf="iban && (iban.dirty || iban.touched) && iban.errors" class="errors">
+        <span *ngIf="iban.errors?.required">El DNI es obligatorio</span>
+        <span *ngIf="iban.errors?.ibanvalidator">DNI debe tener 9 caracteres</span>
+
+      </div>
+
+      <hr class="mb-5">
+
+      <h3>¡Selecciona tu plan de datos!</h3><br>
+      <div class="formGroup">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" id="dataPlan0" value="0" formControlName="dataPlan" checked>
+          <label class="form-check-label">
+            Sin línea de datos
+          </label>
+        </div><br>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" id="dataPlan1" value="1" formControlName="dataPlan">
+          <label class="form-check-label">
+            Línea de datos 9GB
+          </label>
+        </div><br>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" id="dataPlan2" value="2" formControlName="dataPlan">
+          <label class="form-check-label">
+            Línea de datos 17GB
+          </label>
+        </div><br>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" id="dataPlan3" value="3" formControlName="dataPlan">
+          <label class="form-check-label">
+            Línea de datos 52GB
+          </label>
+        </div><br>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" id="dataPlan4" value="4" formControlName="dataPlan">
+          <label class="form-check-label">
+            Línea de datos 92GB
+          </label>
+        </div><br>
+      </div>
+      <br>
+      <hr class="mb-5">
+      <h3 style="display: none;">¡Selecciona tu plan de fibra!</h3>
+      <div style="display: none;">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" id="fiberPlan0" value="0" formControlName="fiberPlan" checked>
+          <label class="form-check-label">
+            Sin plan de Fibra
+          </label>
+        </div><br>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" id="fiberPlan1" value="1" formControlName="fiberPlan">
+          <label class="form-check-label">
+            Fibra plan 100Mb
+          </label>
+        </div><br>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" id="fiberPlan2" value="2" formControlName="fiberPlan">
+          <label class="form-check-label">
+            Fibra plan 300Mb
+          </label>
+        </div><br>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" id="fiberPlan3" value="3" formControlName="fiberPlan">
+          <label class="form-check-label">
+            Fibra plan 600Mb
+          </label>
+        </div><br>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" id="fiberPlan4" value="4" formControlName="fiberPlan">
+          <label class="form-check-label">
+            Fibra plan 1000Mb
+          </label>
+        </div>
+      </div>
+      <h3>¡Selecciona tu plan de televisión!</h3><br>
+      <div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="tvplan" value="1" formControlName="tvPlan">
+          <label class="form-check-label">
+            TV
+          </label>
+        </div>
+      </div>
+      <br><br>
+      <hr class="mb-5">
+      <input type="submit" class="fadeIn fourth" value="Register" [disabled]="form.invalid">
+    </form>
+
+    <div *ngIf="successfulResponse==true" class="alert alert-success box-msg" role="alert">
+      <strong>Registro completado, por favor revisa tu correo</strong>
+    </div>
+    <div *ngIf="failedResponse==true" class="alert alert-danger box-msg" role="alert">
+      <strong>Formulario inválido</strong>
+    </div>
+    <!-- Remind Passowrd --><!--
+    <div id="formFooter">
+      <a class="underlineHover" href="#">Forgot Password?</a>
+    </div>-->
+
+  </div>
+</div>
