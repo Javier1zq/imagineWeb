@@ -5,7 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { RegisterComponent } from './register/register.component';
 import { FiberComponent } from './fiber/fiber.component';
 import { DataComponent } from './data/data.component';
@@ -15,6 +15,8 @@ import { CoverageComponent } from './coverage/coverage.component';
 import { VerifiedComponent } from './verified/verified.component';
 import { RegisterNoFiberComponent } from './register-no-fiber/register-no-fiber.component';
 
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 
 
@@ -36,7 +38,8 @@ import { RegisterNoFiberComponent } from './register-no-fiber/register-no-fiber.
     CommonModule,
     RouterModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    TranslateModule
 
   ]
 }) 

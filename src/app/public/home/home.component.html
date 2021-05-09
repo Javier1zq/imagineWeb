@@ -1,6 +1,17 @@
 
 
+<div>
+  <h1>{{ 'home.title' | translate }}</h1>
 
+  <!-- translation: translation pipe -->
+  <p>{{ 'home.text' | translate }}</p>
+
+  <!-- translation: directive (key as attribute)-->
+  <p [translate]="'home.text'"></p>
+
+  <!-- translation: directive (key as content of element) -->
+  <p translate>home.text</p>
+</div>
 <!--Carousel Wrapper-->
 <div id="carousel-example-2" class="carousel slide carousel-fade wow fadeInUp"    data-ride="carousel">
   <!--Indicators-->

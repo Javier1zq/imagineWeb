@@ -13,6 +13,7 @@ import { Plan2Component } from './public/plan2/plan2.component';
 import { CoverageComponent } from './public/coverage/coverage.component';
 import { TopNavbarComponent } from './component/navbar/navbar.component';
 import { VerifiedComponent } from './public/verified/verified.component';
+import {TranslateModule} from '@ngx-translate/core';
 const routes: Routes = [
 
   {
@@ -36,7 +37,10 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes),
+    TranslateModule
+  ],
+  exports: [RouterModule,
+    TranslateModule]
 })
 export class AppRoutingModule { }

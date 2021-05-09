@@ -15,7 +15,15 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { NgwWowModule } from 'ngx-wow';
 import { NgxIbanModule } from "ngx-iban";
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
 //import { WOW } from 'wow.js';
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -33,7 +41,16 @@ import { ReactiveFormsModule } from '@angular/forms';
     NgwWowModule,
     ChartsModule,
     NgxIbanModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+        loader: {
+            provide: TranslateLoader,
+            useFactory: HttpLoaderFactory,
+            deps: [HttpClient]
+        }
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
