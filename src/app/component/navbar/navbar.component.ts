@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../authservice.service';
+import {TranslateService} from '@ngx-translate/core';
 
 
 @Component({
@@ -9,7 +10,7 @@ import { AuthService } from '../../authservice.service';
 })
 export class TopNavbarComponent implements OnInit {
 
-  constructor(public authService: AuthService) { }
+  constructor(public authService: AuthService, public translate: TranslateService) { }
 
   loggedIn = false;
   ngOnInit(){

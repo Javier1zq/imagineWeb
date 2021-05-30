@@ -15,133 +15,133 @@
     <!-- Login Form -->
 
     <form [formGroup]="form" (submit)="submit()">
-      <br><h1 class="text-center">¡Registro!</h1><br>
-      <input type="text" formControlName="first_name" class="fadeIn second" placeholder="Nombre">
+      <br><h1 class="text-center">{{ 'register.register' | translate }}</h1><br>
+      <input type="text" formControlName="first_name" class="fadeIn second" placeholder="{{ 'register.name' | translate }}">
       <div *ngIf="first_name && (first_name.dirty || first_name.touched) && first_name.errors" class="errors">
-        <span *ngIf="first_name.errors?.required">El nombre es obligatorio</span>
+        <span *ngIf="first_name.errors?.required">{{ 'register.name*' | translate }}</span>
       </div>
-      <input type="text" formControlName="last_name" class="fadeIn second" placeholder="Apellidos">
+      <input type="text" formControlName="last_name" class="fadeIn second" placeholder="{{ 'register.last_name' | translate }}">
       <div *ngIf="last_name && (last_name.dirty || last_name.touched) && last_name.errors" class="errors">
-        <span *ngIf="last_name.errors?.required">El nombre completo es obligatorio</span>
+        <span *ngIf="last_name.errors?.required">{{ 'register.last_name*' | translate }}</span>
       </div>
-      <input type="text" formControlName="DNI" class="fadeIn third" placeholder="DNI">
+      <input type="text" formControlName="DNI" class="fadeIn third" placeholder="{{ 'register.DNI' | translate }}">
       <div *ngIf="DNI && (DNI.dirty || DNI.touched) && DNI.errors" class="errors">
-        <span *ngIf="DNI.errors?.required">El DNI es obligatorio</span>
-        <span *ngIf="DNI.errors?.minlength">DNI debe tener 9 caracteres</span>
-        <span *ngIf="DNI.errors?.maxlength">DNI debe tener 9 caracteres</span>
+        <span *ngIf="DNI.errors?.required">{{ 'register.DNI*' | translate }}</span>
+        <span *ngIf="DNI.errors?.minlength">{{ 'register.DNI*min' | translate }}</span>
+        <span *ngIf="DNI.errors?.maxlength">{{ 'register.DNI*max' | translate }}</span>
       </div>
-      <input type="email" formControlName="email" class="fadeIn second" placeholder="Email">
+      <input type="email" formControlName="email" class="fadeIn second" placeholder="{{ 'register.email' | translate }}">
       <div *ngIf="email && (email.dirty || email.touched) && email.errors" class="errors">
-        <span *ngIf="email.errors?.required">Email is required</span>
-        <span *ngIf="email.errors?.email">Email is invalid</span>
+        <span *ngIf="email.errors?.required">{{ 'register.email*' | translate }}</span>
+        <span *ngIf="email.errors?.email">{{ 'register.email*inv' | translate }}</span>
       </div>
-      <input type="password" formControlName="password" class="fadeIn third" placeholder="Password">
+      <input type="password" formControlName="password" class="fadeIn third" placeholder="{{ 'register.password' | translate }}">
       <div *ngIf="password && (password.dirty || password.touched) && password.errors" class="errors">
-        <span *ngIf="password.errors?.required">Password is required</span>
-        <span *ngIf="password.errors?.minlength">Password needs to be 6 characters</span>
+        <span *ngIf="password.errors?.required">{{ 'register.password*' | translate }}</span>
+        <span *ngIf="password.errors?.minlength">{{ 'register.password*min' | translate }}</span>
       </div>
-      <input type="password" formControlName="password_confirmation" class="fadeIn third" placeholder="Password Confirmation">
+      <input type="password" formControlName="password_confirmation" class="fadeIn third" placeholder="{{ 'register.password_conf' | translate }}">
       <div *ngIf="password_confirmation && (password_confirmation.dirty || password_confirmation.touched) && password_confirmation.errors" class="errors">
-        <span *ngIf="password != password_confirmation">La contraseña debe ser igual</span>
+        <span *ngIf="password != password_confirmation">{{ 'register.password_conf*' | translate }}</span>
       </div>
-      <input type="text" formControlName="iban" class="fadeIn third" placeholder="IBAN">
+      <input type="text" formControlName="iban" class="fadeIn third" placeholder="{{ 'register.iban' | translate }}">
       <div *ngIf="iban && (iban.dirty || iban.touched) && iban.errors" class="errors">
-        <span *ngIf="iban.errors?.required">El DNI es obligatorio</span>
-        <span *ngIf="iban.errors?.ibanvalidator">DNI debe tener 9 caracteres</span>
+        <span *ngIf="iban.errors?.required">{{ 'register.iban*' | translate }}</span>
+        <span *ngIf="iban.errors?.ibanvalidator">{{ 'register.iban*inv' | translate }}</span>
 
       </div>
 
       <hr class="mb-5">
 
-      <h3>¡Selecciona tu plan de datos!</h3><br>
+      <h3>{{ 'register.select_data' | translate }}</h3><br>
       <div class="formGroup">
         <div class="form-check">
           <input class="form-check-input" type="radio" id="dataPlan0" value="0" formControlName="dataPlan" checked>
           <label class="form-check-label">
-            Sin línea de datos
+            {{ 'register.no_data' | translate }}
           </label>
         </div><br>
         <div class="form-check">
           <input class="form-check-input" type="radio" id="dataPlan1" value="1" formControlName="dataPlan">
           <label class="form-check-label">
-            Línea de datos 9GB
+            {{ 'register.data9' | translate }}
           </label>
         </div><br>
         <div class="form-check">
           <input class="form-check-input" type="radio" id="dataPlan2" value="2" formControlName="dataPlan">
           <label class="form-check-label">
-            Línea de datos 17GB
+            {{ 'register.data17' | translate }}
           </label>
         </div><br>
         <div class="form-check">
           <input class="form-check-input" type="radio" id="dataPlan3" value="3" formControlName="dataPlan">
           <label class="form-check-label">
-            Línea de datos 52GB
+            {{ 'register.data52' | translate }}
           </label>
         </div><br>
         <div class="form-check">
           <input class="form-check-input" type="radio" id="dataPlan4" value="4" formControlName="dataPlan">
           <label class="form-check-label">
-            Línea de datos 92GB
+            {{ 'register.data92' | translate }}
           </label>
         </div><br>
       </div>
       <br>
       <hr class="mb-5">
-      <h3>¡Selecciona tu plan de fibra!</h3><br>
+      <h3>{{ 'register.select_fiber' | translate }}</h3><br>
       <div>
         <div class="form-check">
           <input class="form-check-input" type="radio" id="fiberPlan0" value="0" formControlName="fiberPlan" checked>
           <label class="form-check-label">
-            Sin plan de Fibra
+            {{ 'register.no_fiber' | translate }}
           </label>
         </div><br>
         <div class="form-check">
           <input class="form-check-input" type="radio" id="fiberPlan1" value="1" formControlName="fiberPlan">
           <label class="form-check-label">
-            Fibra plan 100Mb
+            {{ 'register.fiber100' | translate }}
           </label>
         </div><br>
         <div class="form-check">
           <input class="form-check-input" type="radio" id="fiberPlan2" value="2" formControlName="fiberPlan">
           <label class="form-check-label">
-            Fibra plan 300Mb
+            {{ 'register.fiber300' | translate }}
           </label>
         </div><br>
         <div class="form-check">
           <input class="form-check-input" type="radio" id="fiberPlan3" value="3" formControlName="fiberPlan">
           <label class="form-check-label">
-            Fibra plan 600Mb
+            {{ 'register.fiber600' | translate }}
           </label>
         </div><br>
         <div class="form-check">
           <input class="form-check-input" type="radio" id="fiberPlan4" value="4" formControlName="fiberPlan">
           <label class="form-check-label">
-            Fibra plan 1000Mb
+            {{ 'register.fiber1000' | translate }}
           </label>
         </div><br>
       </div>
       <br>
       <hr class="mb-5">
-      <h3>¡Selecciona tu plan de televisión!</h3><br>
+      <h3>{{ 'register.select_tv' | translate }}</h3><br>
       <div>
         <div class="form-check">
           <input class="form-check-input" type="checkbox" id="tvplan" value="1" formControlName="tvPlan">
           <label class="form-check-label">
-            TV
+            {{ 'register.tv' | translate }}
           </label>
         </div>
       </div>
       <br><br>
       <hr class="mb-5">
-      <input type="submit" class="fadeIn fourth" value="Register" [disabled]="form.invalid">
+      <input type="submit" class="fadeIn fourth" value="{{ 'register.registerbtn' | translate }}" [disabled]="form.invalid">
     </form>
 
     <div *ngIf="successfulResponse==true" class="alert alert-success box-msg" role="alert">
-      <strong>Registro completado, por favor revisa tu correo</strong>
+      <strong>{{ 'register.registry_complete' | translate }}</strong>
     </div>
     <div *ngIf="failedResponse==true" class="alert alert-danger box-msg" role="alert">
-      <strong>Formulario inválido</strong>
+      <strong>{{ 'register.invalid_form' | translate }}</strong>
     </div>
     <!-- Remind Passowrd --><!--
     <div id="formFooter">

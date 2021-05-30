@@ -2,21 +2,21 @@
 <div class="wrapper fadeInDown">
   <div id="formContent">
     <form [formGroup]="form" (submit)="submit()">
-      <h1>Revisa tu covertura!</h1>
-      <input type="text" formControlName="street" class="fadeIn second" placeholder="Calle">
-      <input type="number" formControlName="number" class="fadeIn third" placeholder="Número">
-      <input type="text" formControlName="town" class="fadeIn fourth" placeholder="Localidad">
+      <h1>{{ 'coverage.review' | translate }}</h1>
+      <input type="text" formControlName="street" class="fadeIn second" placeholder="{{ 'coverage.street' | translate }}">
+      <input type="number" formControlName="number" class="fadeIn third" placeholder="{{ 'coverage.number' | translate }}">
+      <input type="text" formControlName="town" class="fadeIn fourth" placeholder="{{ 'coverage.local' | translate }}">
       <br>
-      <input type="submit" class="fadeIn fifth" value="Check coverage">
+      <input type="submit" class="fadeIn fifth" value="{{ 'coverage.check' | translate }}">
     </form>
     <div *ngIf="successfulResponse" class="alert alert-success box-msg" role="alert">
-      <strong>¡Encontrado!</strong>
+      <strong>{{ 'coverage.found' | translate }}</strong>
       <br>
-      <a routerLink="/register"  class="nav-link border border-light rounded">Registrate!</a>
+      <a routerLink="/register"  class="nav-link border border-light rounded">{{ 'coverage.register' | translate }}</a>
 
     </div>
     <div *ngIf="failedResponse" class="alert alert-danger box-msg" role="alert">
-      <strong>¡No lo hemos encontrado!</strong>
+      <strong>{{ 'coverage.not_found' | translate }}</strong>
     </div>
   </div>
 </div>

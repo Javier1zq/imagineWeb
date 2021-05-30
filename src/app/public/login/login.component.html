@@ -14,36 +14,36 @@
 
     <!-- Login Form -->
     <form [formGroup]="form" (submit)="submit()">
-      <h1>Login!</h1>
-      <input type="email" formControlName="email" class="fadeIn second" placeholder="Email">
+      <h1>{{ 'login.login' | translate }}</h1>
+      <input type="email" formControlName="email" class="fadeIn second" placeholder="{{ 'register.email' | translate }}">
       <div *ngIf="email && (email.dirty || email.touched) && email.errors" class="errors">
-        <span *ngIf="email.errors?.required">Email is required</span>
-        <span *ngIf="email.errors?.email">Email is invalid</span>
+        <span *ngIf="email.errors?.required">{{ 'register.email*' | translate }}</span>
+        <span *ngIf="email.errors?.email">{{ 'register.email*inv' | translate }}</span>
       </div>
-      <input type="password" formControlName="password" class="fadeIn third" placeholder="Password">
+      <input type="password" formControlName="password" class="fadeIn third" placeholder="{{ 'register.password' | translate }}">
       <div *ngIf="password && (password.dirty || password.touched) && password.errors" class="errors">
-        <span *ngIf="password.errors?.required">Password is required</span>
-        <span *ngIf="password.errors?.minlength">Password needs to be 6 characters</span>
+        <span *ngIf="password.errors?.required">{{ 'register.password*' | translate }}</span>
+        <span *ngIf="password.errors?.minlength">{{ 'register.password*min' | translate }}</span>
       </div>
-      <input type="submit" class="fadeIn fourth" value="Log In">
+      <input type="submit" class="fadeIn fourth" value="{{ 'login.loginbtn' | translate }}">
     </form>
       <div *ngIf="failedResponse" class="alert alert-danger box-msg" role="alert">
-        <strong>Invalid Credentials</strong>
+        <strong>{{ 'login.invalid_credentials' | translate }}</strong>
         <br>
       </div>
       <div *ngIf="userNotVerified" class="alert alert-danger box-msg" role="alert">
-        <strong>User is not verified, please check your email</strong>
+        <strong>{{ 'login.not_verified' | translate }}</strong>
         <br>
       </div>
       <br>
-      <h2>Haven't registered yet?</h2>
-      <input type="submit" class="fadeIn fourth" value="Register" routerLink="/register">
+      <h2>{{ 'login.registered?' | translate }}</h2><br>
+      <input type="submit" class="fadeIn fourth" value="{{ 'login.registerbtn' | translate }}" routerLink="/register">
 
 
 
     <!-- Remind Passowrd -->
-    <div id="formFooter">
-      <a class="underlineHover" href="#">Forgot Password?</a>
+    <div id="formFooter"  style="display: none;">
+      <a class="underlineHover" href="#">{{ 'login.forgot_pw' | translate }}</a>
     </div>
 
   </div>

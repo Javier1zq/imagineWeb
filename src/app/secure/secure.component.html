@@ -28,24 +28,24 @@
 </div>-->
 
   <!--Section: Tabs-->
-  <h1 class="display-3 text-center">Welcome to your profile, {{user?.first_name}} {{user?.last_name}}</h1>
+  <h1 class="display-3 text-center">{{ 'secure.welcome' | translate }} {{user?.first_name}} {{user?.last_name}}</h1>
   <br><br>
   <div *ngIf="servicebool">
     <br><br><br><br>
     <h2 class="display-3 text-center">
-      You are currently not subsribed to any services
+      {{ 'secure.not_subscribed' | translate }}
     </h2>
   </div>
   <div *ngIf="databool">
     <br><br><br><br>
     <h2 class="display-3 text-center">
-      Your data consumption is not being monitored at this time
+      {{ 'secure.not_monitored' | translate }}
     </h2>
   </div>
   <nav>
     <div class="nav nav-tabs justify-content-center wow fadeIn" id="nav-tab" role="tablist"  *ngIf="!databool">
-      <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Consumo</a>
-      <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Facturacion</a>
+      <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">{{ 'secure.consumption' | translate }}</a>
+      <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">{{ 'secure.billing' | translate }}</a>
     </div>
   </nav>
   <div class="tab-content" id="nav-tabContent" *ngIf="!databool">
@@ -54,7 +54,7 @@
       <div class="card">
         <div class="card-body">
           <br><br>
-          <h1 class="text-center wow fadeIn" *ngIf="data" >Consumo de datos disponible para el dia: {{data[0].date}}</h1>
+          <h1 class="text-center wow fadeIn" *ngIf="data" >{{ 'secure.consumtion_date' | translate }} {{data[0].date}}</h1>
           <br><br>
         </div>
       </div>
@@ -62,7 +62,7 @@
         <div class="card-body">
           <div class="row features-small mt-5 wow fadeIn">
             <div class="col-3">
-              <h1 class="text-center" >Consumo de datos:</h1>
+              <h1 class="text-center" >{{ 'secure.data_consumption' | translate }}</h1>
             </div>
             <div class="col-7">
               <canvas *ngIf="datachartbool" baseChart
@@ -79,10 +79,10 @@
         <div class="card-body">
           <div class="row features-small mt-5 wow fadeIn">
             <div class="col-3">
-              <h1 class="text-center" >Consumo de minutos:</h1>
+              <h1 class="text-center" >{{ 'secure.minute_consumption' | translate }}</h1>
             </div>
             <div class="col-7">
-              <p class="text-center" *ngIf="phonestring">{{phonestring}}</p>
+              <p class="text-center" *ngIf="phonestring">{{phonestring}} {{ 'secure.minutes' | translate }}</p>
             </div>
 
           </div>
@@ -92,10 +92,10 @@
         <div class="card-body">
           <div class="row features-small mt-5 wow fadeIn">
             <div class="col-3">
-              <h1 class="text-center" >Consumo de fibra:</h1>
+              <h1 class="text-center" >{{ 'secure.fiber_consumption' | translate }}</h1>
             </div>
             <div class="col-7">
-              <p class="text-center" *ngIf="fiberstring">{{fiberstring}}</p>
+              <p class="text-center" *ngIf="fiberstring">{{fiberstring}} {{ 'secure.gigaBytes' | translate }}</p>
             </div>
 
           </div>
@@ -108,11 +108,11 @@
         <div class="card-body">
           <div class="row features-small mt-5 wow fadeIn" *ngFor="let item of data; let i = index">
             <div class="col-6">
-              <h3 class="text-center" >Generar factura de la fecha: {{item.date}}</h3>
+              <h3 class="text-center" >{{ 'secure.generate_date' | translate }} {{item.date}}</h3>
             </div>
             <div class="col-6 center">
               <a   (click)='generateInvoice()' class="nav-link border border-light rounded text-center">
-                <i class="fas fa-file-invoice mr-2" ></i>Generar
+                <i class="fas fa-file-invoice mr-2" ></i>{{ 'secure.generate' | translate }}
               </a>
             </div>
 

@@ -54,31 +54,35 @@
       <!-- Left -->
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" routerLink="/">Home
+          <a class="nav-link" routerLink="/">{{ 'navbar.home' | translate }}
             <span class="sr-only">(current)</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/data">Movil</a>
+          <a class="nav-link" routerLink="/data">{{ 'navbar.mobile' | translate }}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/plan2">Movil+Fibra</a>
+          <a class="nav-link" routerLink="/plan2">{{ 'navbar.mobile+fiber' | translate }}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/fiber">Fibra</a>
+          <a class="nav-link" routerLink="/fiber">{{ 'navbar.fiber' | translate }}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/tv">TV</a>
+          <a class="nav-link" routerLink="/tv">{{ 'navbar.tv' | translate }}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/coverage">Cobertura</a>
+          <a class="nav-link" routerLink="/coverage">{{ 'navbar.coverage' | translate }}</a>
         </li>
 
       </ul>
 
       <!-- Right -->
       <ul class="navbar-nav nav-flex-icons">
-
+        <li class="nav-item"  style="padding-top:8px;">
+          <select #langSelect (change)="translate.use(langSelect.value)">
+            <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
+          </select>
+        </li>
         <li class="nav-item">
           <a href="https://www.facebook.com/imaginetelecom" class="nav-link" target="_blank">
             <i class="fab fa-facebook-f"></i>
@@ -91,15 +95,15 @@
         </li>
         <li class="nav-item">
           <a routerLink="/profile" *ngIf='(authService.isLoggedIn$ | async)' class="nav-link border border-light rounded">
-            <i class="fas fa-user mr-2"></i>Perfil
+            <i class="fas fa-user mr-2"></i>{{ 'navbar.profile' | translate }}
           </a>
         </li>
         <li class="nav-item">
           <a routerLink="/login" *ngIf='!(authService.isLoggedIn$ | async)' class="nav-link border border-light rounded">
-            <i class="far fa-user mr-2"></i>Log In
+            <i class="far fa-user mr-2"></i>{{ 'navbar.login' | translate }}
           </a>
           <a routerLink="/" *ngIf='authService.isLoggedIn$ | async' (click)='authService.logout()' class="nav-link border border-light rounded">
-            <i class="fas fa-user-alt-slash mr-2"></i>Log Out
+            <i class="fas fa-user-alt-slash mr-2"></i>{{ 'navbar.logout' | translate }}
           </a>
         </li>
       </ul>

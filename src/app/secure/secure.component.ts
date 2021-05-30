@@ -48,7 +48,7 @@ export class SecureComponent implements OnInit {
       'Accept': 'application/json',
       'Authorization': `Bearer ${localStorage.getItem('token')}`
     });
-    this.http.post('http://5.225.184.114:8000/api/generateInvoice', this.user,{headers: headers}).subscribe(
+    this.http.post('http://46.25.181.72:8000/api/generateInvoice', this.user,{headers: headers}).subscribe(
           result=>{
             console.log("This is the base64 pdf:");
             console.log(result);
@@ -76,13 +76,13 @@ export class SecureComponent implements OnInit {
 
     });
     //console.log(localStorage.getItem('token'));
-    this.http.get('http://5.225.184.114:8000/api/user',{headers: headers}).subscribe(
+    this.http.get('http://46.25.181.72:8000/api/user',{headers: headers}).subscribe(
       result=>{
         this.user=result;
         console.log("This is the user:");
         console.log(this.user.DNI);
 
-        this.http.post('http://5.225.184.114:8000/api/services', this.user,{headers: headers}).subscribe(
+        this.http.post('http://46.25.181.72:8000/api/services', this.user,{headers: headers}).subscribe(
           result=>{
             this.services=<Services[]>result;
             console.log("this is the result of get api/services: ");
@@ -99,7 +99,7 @@ export class SecureComponent implements OnInit {
 
 
 
-                this.http.post('http://5.225.184.114:8000/api/data', this.user,{headers: headers}).subscribe(
+                this.http.post('http://46.25.181.72:8000/api/data', this.user,{headers: headers}).subscribe(
                   result=>{
                     this.data=<Data[]>result
                     console.log("this is the result of get api/data: ");

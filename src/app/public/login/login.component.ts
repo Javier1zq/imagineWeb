@@ -39,11 +39,11 @@ export class LoginComponent implements OnInit {
 
 
 
-    this.http.post('http://5.225.184.114:8000/api/userIsVerified', formData).subscribe(
+    this.http.post('http://46.25.181.72:8000/api/userIsVerified', formData).subscribe(
       (result) =>{
         //console.log(result);
         if (result==1) {
-          this.http.post('http://5.225.184.114:8000/oauth/token', data).subscribe(
+          this.http.post('http://46.25.181.72:8000/oauth/token', data).subscribe(
             (result: any) =>{
               /*console.log('success');
               console.log(result);*/

@@ -2,38 +2,38 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-3 col-xs-12 about-company">
-        <h2>Imagine</h2>
-        <p class="pr-5 text-white-50">Operadora autorizada por:</p>
+        <h2>{{ 'footer.imagine' | translate }}</h2>
+        <p class="pr-5 text-white-50">{{ 'footer.operator' | translate }}</p>
         <img height="100px"src="assets/img/LOGO_pie-300x111.png" >
       </div>
       <div class="col-lg-3 col-xs-12 links">
-        <h4 class="mt-lg-0 mt-sm-3">TARIFAS IMAGINE</h4>
+        <h4 class="mt-lg-0 mt-sm-3">{{ 'footer.imagine_rates' | translate }}</h4>
           <ul class="m-0 p-0">
-            <li>- <a href="#">Ofertas de fibra y móvil</a></li>
-            <li>- <a href="#">Tarifas móviles</a></li>
-            <li>- <a href="#">Tarifas de fibra</a></li>
-            <li>- <a href="#">Tarifas de televisión</a></li>
-            <li>- <a href="#">Tarifas de roaming</a></li>
+            <li>- <a routerLink="/plan2">{{ 'footer.offers' | translate }}</a></li>
+            <li>- <a routerLink="/data">{{ 'footer.mobile_rates' | translate }}</a></li>
+            <li>- <a routerLink="/fiber">{{ 'footer.fiber_rates' | translate }}</a></li>
+            <li>- <a routerLink="/tv">{{ 'footer.tv_rates' | translate }}</a></li>
+            <li>- <a routerLink="/data">{{ 'footer.roaming_rates' | translate }}</a></li>
           </ul>
       </div>
       <div class="col-lg-3 col-xs-12 links">
-        <h4 class="mt-lg-0 mt-sm-3">AYUDA Y CONTACTO</h4>
+        <h4 class="mt-lg-0 mt-sm-3">{{ 'footer.help' | translate }}</h4>
           <ul class="m-0 p-0">
-            <li>- <a href="#">Hazte cliente</a></li>
-            <li>- <a href="#">Resuelve tus dudas</a></li>
-            <li>- <a href="#">Contacta con nosotros</a></li>
+            <li>- <a routerLink="/register">{{ 'footer.be_client' | translate }}</a></li>
+            <li>- <a href="#">{{ 'footer.faq' | translate }}</a></li>
+            <li>- <a href="#">{{ 'footer.contact' | translate }}</a></li>
           </ul>
       </div>
       <div class="col-lg-3 col-xs-12 location">
-        <h4 class="mt-lg-0 mt-sm-4">Dirección</h4>
-        <p>Plaza Sta. Catalina, Nº6, Murcia, España</p>
-        <p class="mb-0"><i class="fa fa-phone mr-3"></i>900 899 905</p>
-        <p><i class="fa fa-envelope-o mr-3"></i>info@hsdf.com</p>
+        <h4 class="mt-lg-0 mt-sm-4">{{ 'footer.address' | translate }}</h4>
+        <p>{{ 'footer.address_desc' | translate }}</p>
+        <p class="mb-0"><i class="fa fa-phone mr-3"></i>{{ 'footer.phone' | translate }}</p>
+        <p><i class="fa fa-envelope-o mr-3"></i>{{ 'footer.email' | translate }}</p>
       </div>
     </div>
     <div class="row mt-5">
       <div class="col copyright">
-        <p class=""><small class="text-white-50">® 2020 Fibra Medios Telecom</small></p>
+        <p class=""><small class="text-white-50">{{ 'footer.trademark' | translate }}</small></p>
       </div>
     </div>
   </div>

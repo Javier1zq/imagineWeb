@@ -1,17 +1,4 @@
 
-
-<div>
-  <h1>{{ 'home.title' | translate }}</h1>
-
-  <!-- translation: translation pipe -->
-  <p>{{ 'home.text' | translate }}</p>
-
-  <!-- translation: directive (key as attribute)-->
-  <p [translate]="'home.text'"></p>
-
-  <!-- translation: directive (key as content of element) -->
-  <p translate>home.text</p>
-</div>
 <!--Carousel Wrapper-->
 <div id="carousel-example-2" class="carousel slide carousel-fade wow fadeInUp"    data-ride="carousel">
   <!--Indicators-->
@@ -30,7 +17,7 @@
         <div class="mask rgba-black-light"></div>
       </div>
       <div class="carousel-caption">
-        <h3 class="h3-responsive">imagina una operadora diferente…</h3>
+        <h3 class="h3-responsive">{{ 'home.caroussel_text' | translate }}</h3>
         <p></p>
       </div>
     </div>
@@ -42,7 +29,7 @@
         <div class="mask rgba-black-strong"></div>
       </div>
       <div class="carousel-caption">
-        <h3 class="h3-responsive">imagina una operadora diferente…</h3>
+        <h3 class="h3-responsive">{{ 'home.caroussel_text' | translate }}</h3>
         <p></p>
       </div>
     </div>
@@ -54,7 +41,7 @@
         <div class="mask rgba-black-slight"></div>
       </div>
       <div class="carousel-caption">
-        <h3 class="h3-responsive">imagina una operadora diferente…</h3>
+        <h3 class="h3-responsive">{{ 'home.caroussel_text' | translate }}</h3>
         <p></p>
       </div>
     </div>
@@ -63,24 +50,24 @@
   <!--Controls-->
   <a class="carousel-control-prev" href="#carousel-example-2" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
+    <span class="sr-only">{{ 'home.previous' | translate }}</span>
   </a>
   <a class="carousel-control-next" href="#carousel-example-2" role="button" data-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
+    <span class="sr-only">{{ 'home.next' | translate }}</span>
   </a>
   <!--/.Controls-->
 </div>
 <!--/.Carousel Wrapper-->
 <hr class="my-5 wow fadeInUp">
-<h1 class="section-heading pt-4 text-center wow fadeInUp" data-wow-delay="0.7s" >Imagina unas tarifas a tu medida.</h1>
+<h1 class="section-heading pt-4 text-center wow fadeInUp" data-wow-delay="0.7s" >{{ 'home.imagine_rate' | translate }}</h1>
 <hr class="my-5 wow fadeInUp">
 
 
 
 <!--Main layout-->
 <main>
-  <div class="container">
+
 
     <!--Section: Main info- ->
     <section class="mt-5 wow fadeIn">
@@ -367,18 +354,18 @@
           <div class="card-body">
             <div class="row">
               <div class="col-10 mb-2">
-                <h2 class="feature-title font-bold mb-1">Fibra 100 Mb + 17 GB</h2>
-                <h5>Fibra + móvil</h5>
+                <h2 class="feature-title font-bold mb-1">{{ 'home.plan100mb+17gb' | translate }}</h2>
+                <h5>{{ 'home.fiber+mobile' | translate }}</h5>
                 <h1>29,90€</h1>
-                <p class="grey-text mt-2">IVA incluido</p>
+                <p class="grey-text mt-2">{{ 'home.tax_included' | translate }}</p>
                 <div class="row">
-                  <div class="col-5"><button  routerLink="/register"  type="button" class="btn btn-primary">Contratar</button></div>
+                  <div class="col-5"><button  routerLink="/register"  type="button" class="btn btn-primary">{{ 'home.hire' | translate }}</button></div>
                   <div class="col-5"><button type="button" class="btn btn-secondary">+Info</button></div>
                 </div>
                 <br>
-                <p><i class="fas fa-check" style="color:#00CF83"></i> Precio final</p>
-                <p><i class="fas fa-check" style="color:#00CF83"></i> Cobertura 4G Vodafone</p>
-                <p><i class="fas fa-check" style="color:#00CF83"></i> Sin permanencia</p>
+                <p><i class="fas fa-check" style="color:#00CF83"></i> {{ 'home.final_price' | translate }}</p>
+                <p><i class="fas fa-check" style="color:#00CF83"></i> {{ 'home.coverage4g' | translate }}</p>
+                <p><i class="fas fa-check" style="color:#00CF83"></i> {{ 'home.no_permanence' | translate }}</p>
               </div>
             </div>
           </div>
@@ -395,19 +382,19 @@
           <div class="card-body">
             <div class="row">
               <div class="col-10 mb-2">
-                <h2 class="feature-title font-bold mb-1">Fibra 300 Mb + 17 GB</h2>
-                <h5>Fibra + móvil</h5>
+                <h2 class="feature-title font-bold mb-1">{{ 'home.plan300mb+17gb' | translate }}</h2>
+                <h5>{{ 'home.fiber+mobile' | translate }}</h5>
                 <h1>35,90€</h1>
-                <p class="grey-text mt-2">IVA incluido</p>
+                <p class="grey-text mt-2">{{ 'home.tax_included' | translate }}</p>
                 <div class="row">
-                  <div class="col-5"><button routerLink="/register"  type="button" class="btn btn-primary">Contratar</button></div>
+                  <div class="col-5"><button routerLink="/register"  type="button" class="btn btn-primary">{{ 'home.hire' | translate }}</button></div>
                   <div class="col-5"><button type="button" class="btn btn-secondary">+Info</button></div>
                 </div>
                 <br>
 
-                <p><i class="fas fa-check" style="color:#00CF83"></i>   Precio final</p>
-                <p><i class="fas fa-check" style="color:#00CF83"></i>   Cobertura 4G Vodafone</p>
-                <p><i class="fas fa-check" style="color:#00CF83"></i>   Sin permanencia</p>
+                <p><i class="fas fa-check" style="color:#00CF83"></i> {{ 'home.final_price' | translate }}</p>
+                <p><i class="fas fa-check" style="color:#00CF83"></i> {{ 'home.coverage4g' | translate }}</p>
+                <p><i class="fas fa-check" style="color:#00CF83"></i> {{ 'home.no_permanence' | translate }}</p>
               </div>
             </div>
           </div>
@@ -421,14 +408,14 @@
         <!--Grid row-->
         <div class="card">
           <div class="card-body">
-              <h2>Nuestras tarifas incluyen:</h2>
+              <h2>{{ 'home.our_rates_include' | translate }}</h2>
               <br>
-              <p><i class="fas fa-check" style="color:#00CF83"></i>   Cobertura 4G, la más rápida.</p>
-              <p><i class="fas fa-check" style="color:#00CF83"></i>   Reducción de la velocidad si te quedas sin datos (1 GB extra).</p>
-              <p><i class="fas fa-check" style="color:#00CF83"></i>   Sin permanencia, ni penalizaciones.</p>
-              <p><i class="fas fa-check" style="color:#00CF83"></i>   Precio para siempre, sin sorpresas</p>
-              <p><i class="fas fa-check" style="color:#00CF83"></i>   Roaming gratuito en la Unión Europea.</p>
-              <p><i class="fas fa-check" style="color:#00CF83"></i>   Envío GRATIS de SIM universal.</p>
+              <p><i class="fas fa-check" style="color:#00CF83"></i>   {{ 'home.fastest_coverage' | translate }}</p>
+              <p><i class="fas fa-check" style="color:#00CF83"></i>   {{ 'home.speed_reduction' | translate }}</p>
+              <p><i class="fas fa-check" style="color:#00CF83"></i>   {{ 'home.no_permanence_or_penalty' | translate }}</p>
+              <p><i class="fas fa-check" style="color:#00CF83"></i>   {{ 'home.price_forever' | translate }}</p>
+              <p><i class="fas fa-check" style="color:#00CF83"></i>   {{ 'home.free_roaming' | translate }}</p>
+              <p><i class="fas fa-check" style="color:#00CF83"></i>   {{ 'home.freeSIM' | translate }}</p>
           </div>
         </div>
         <!--/Grid row-->
@@ -444,9 +431,9 @@
   <!--Section: Tabs-->
   <nav>
     <div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
-      <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Fibra + móvil</a>
-      <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Sólo móvil</a>
-      <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Sólo fibra</a>
+      <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">{{ 'home.fiber+mobile' | translate }}</a>
+      <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">{{ 'home.mobile' | translate }}</a>
+      <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">{{ 'home.fiber' | translate }}</a>
     </div>
   </nav>
   <div class="tab-content" id="nav-tabContent">
@@ -456,16 +443,16 @@
         <div class="card-body">
           <div class="row features-small mt-5 wow fadeIn">
             <div class="col-3">
-              <h1>Fibra +10GB</h1>
+              <h1>{{ 'home.fiber+9' | translate }}</h1>
             </div>
             <div class="col-4">
-              <p>Este paquete incluye una conexión a internet por fibra óptica de 100 Mb y una línea con 10 Gb y llamadas ilimitadas.</p>
+              <p>{{ 'home.fiber+9_desc' | translate }}</p>
             </div>
             <div class="col-3">
-              <h2>29,90 €/mes </h2>
+              <h2>29,90 €/{{ 'home.month' | translate }} </h2>
             </div>
             <div class="col-1">
-              <button type="button" class="btn btn-primary">Contratar</button>
+              <button routerLink="/register" type="button" class="btn btn-primary">{{ 'home.hire' | translate }}</button>
             </div>
           </div>
         </div>
@@ -474,16 +461,16 @@
         <div class="card-body">
           <div class="row features-small mt-5 wow fadeIn">
             <div class="col-3">
-              <h1>Fibra +14GB</h1>
+              <h1>{{ 'home.fiber+17' | translate }}</h1>
             </div>
             <div class="col-4">
-              <p>Este paquete incluye una conexión a internet por fibra óptica de 100 Mb y una línea con 14 Gb y llamadas ilimitadas.</p>
+              <p>{{ 'home.fiber+17_desc' | translate }}</p>
             </div>
             <div class="col-3">
-              <h2>31,90 €/mes </h2>
+              <h2>33.80 €/{{ 'home.month' | translate }} </h2>
             </div>
             <div class="col-1">
-              <button type="button" class="btn btn-primary">Contratar</button>
+              <button routerLink="/register" type="button" class="btn btn-primary">{{ 'home.hire' | translate }}</button>
             </div>
           </div>
         </div>
@@ -492,16 +479,16 @@
         <div class="card-body">
           <div class="row features-small mt-5 wow fadeIn">
             <div class="col-3">
-              <h1>Fibra +46GB</h1>
+              <h1>{{ 'home.fiber+52' | translate }}</h1>
             </div>
             <div class="col-4">
-              <p>Este paquete incluye una conexión a internet por fibra óptica de 100 Mb y una línea con 46 Gb y llamadas ilimitadas.</p>
+              <p>{{ 'home.fiber+52_desc' | translate }}</p>
             </div>
             <div class="col-3">
-              <h2>35,90 €/mes </h2>
+              <h2>37.80 €/{{ 'home.month' | translate }} </h2>
             </div>
             <div class="col-1">
-              <button type="button" class="btn btn-primary">Contratar</button>
+              <button routerLink="/register" type="button" class="btn btn-primary">{{ 'home.hire' | translate }}</button>
             </div>
           </div>
         </div>
@@ -513,16 +500,16 @@
         <div class="card-body">
           <div class="row features-small mt-5 ">
             <div class="col-3">
-              <h1>Movil + X</h1>
+              <h1>{{ 'home.data9' | translate }}</h1>
             </div>
             <div class="col-4">
-              <p>Este paquete incluye una conexión a internet por fibra óptica de 100 Mb y una línea con 10 Gb y llamadas ilimitadas.</p>
+              <p>{{ 'home.data9_desc' | translate }}</p>
             </div>
             <div class="col-3">
-              <h2>29,90 €/mes </h2>
+              <h2>8.90 €/{{ 'home.month' | translate }} </h2>
             </div>
             <div class="col-1">
-              <button type="button" class="btn btn-primary">Contratar</button>
+              <button routerLink="/register-no-fiber" type="button" class="btn btn-primary">{{ 'home.hire' | translate }}</button>
             </div>
           </div>
         </div>
@@ -531,16 +518,16 @@
         <div class="card-body">
           <div class="row features-small mt-5 ">
             <div class="col-3">
-              <h1>Movil + X</h1>
+              <h1>{{ 'home.data17' | translate }}</h1>
             </div>
             <div class="col-4">
-              <p>Este paquete incluye una conexión a internet por fibra óptica de 100 Mb y una línea con 14 Gb y llamadas ilimitadas.</p>
+              <p>{{ 'home.data17_desc' | translate }}</p>
             </div>
             <div class="col-3">
-              <h2>31,90 €/mes </h2>
+              <h2>12.90 €/{{ 'home.month' | translate }} </h2>
             </div>
             <div class="col-1">
-              <button type="button" class="btn btn-primary">Contratar</button>
+              <button routerLink="/register-no-fiber" type="button" class="btn btn-primary">{{ 'home.hire' | translate }}</button>
             </div>
           </div>
         </div>
@@ -549,16 +536,16 @@
         <div class="card-body">
           <div class="row features-small mt-5 ">
             <div class="col-3">
-              <h1>Movil + X</h1>
+              <h1>{{ 'home.data52' | translate }}</h1>
             </div>
             <div class="col-4">
-              <p>Este paquete incluye una conexión a internet por fibra óptica de 100 Mb y una línea con 46 Gb y llamadas ilimitadas.</p>
+              <p>{{ 'home.data52_desc' | translate }}</p>
             </div>
             <div class="col-3">
-              <h2>35,90 €/mes </h2>
+              <h2>16.90 €/{{ 'home.month' | translate }} </h2>
             </div>
             <div class="col-1">
-              <button type="button" class="btn btn-primary">Contratar</button>
+              <button routerLink="/register-no-fiber" type="button" class="btn btn-primary">{{ 'home.hire' | translate }}</button>
             </div>
           </div>
         </div>
@@ -570,16 +557,16 @@
         <div class="card-body">
           <div class="row features-small mt-5 ">
             <div class="col-3">
-              <h1>Fibra</h1>
+              <h1>{{ 'home.fiber100' | translate }}</h1>
             </div>
             <div class="col-4">
-              <p>Este paquete incluye una conexión a internet por fibra óptica de 100 Mb y una línea con 10 Gb y llamadas ilimitadas.</p>
+              <p>{{ 'home.fiber100_desc' | translate }}</p>
             </div>
             <div class="col-3">
-              <h2>29,90 €/mes </h2>
+              <h2>21.90 €/{{ 'home.month' | translate }} </h2>
             </div>
             <div class="col-1">
-              <button type="button" class="btn btn-primary">Contratar</button>
+              <button routerLink="/register" type="button" class="btn btn-primary">{{ 'home.hire' | translate }}</button>
             </div>
           </div>
         </div>
@@ -588,16 +575,16 @@
         <div class="card-body">
           <div class="row features-small mt-5 ">
             <div class="col-3">
-              <h1>Fibra</h1>
+              <h1>{{ 'home.fiber300' | translate }}</h1>
             </div>
             <div class="col-4">
-              <p>Este paquete incluye una conexión a internet por fibra óptica de 100 Mb y una línea con 14 Gb y llamadas ilimitadas.</p>
+              <p>{{ 'home.fiber300_desc' | translate }}</p>
             </div>
             <div class="col-3">
-              <h2>31,90 €/mes </h2>
+              <h2>25.90 €/{{ 'home.month' | translate }} </h2>
             </div>
             <div class="col-1">
-              <button type="button" class="btn btn-primary">Contratar</button>
+              <button routerLink="/register" type="button" class="btn btn-primary">{{ 'home.hire' | translate }}</button>
             </div>
           </div>
         </div>
@@ -606,16 +593,16 @@
         <div class="card-body">
           <div class="row features-small mt-5 ">
             <div class="col-3">
-              <h1>Fibra</h1>
+              <h1>{{ 'home.fiber600' | translate }}</h1>
             </div>
             <div class="col-4">
-              <p>Este paquete incluye una conexión a internet por fibra óptica de 100 Mb y una línea con 46 Gb y llamadas ilimitadas.</p>
+              <p>{{ 'home.fiber600_desc' | translate }}</p>
             </div>
             <div class="col-3">
-              <h2>35,90 €/mes </h2>
+              <h2>29.90 €/{{ 'home.month' | translate }} </h2>
             </div>
             <div class="col-1">
-              <button type="button" class="btn btn-primary">Contratar</button>
+              <button routerLink="/register" type="button" class="btn btn-primary">{{ 'home.hire' | translate }}</button>
             </div>
           </div>
         </div>
@@ -630,7 +617,7 @@
     <!--Section: Contratar-->
     <section>
 
-      <h1 class="my-5 h3 text-center wow fadeIn">¿Por qué contratar tu tarifa con Imagine?</h1>
+      <h1 class="my-5 h3 text-center wow fadeIn">{{ 'home.why_imagine' | translate }}</h1>
 
       <!--First row-->
       <div class="row features-small mt-5 wow fadeIn">
@@ -643,8 +630,8 @@
               <i class="fas fa-mobile-alt fa-2x mb-1" aria-hidden="true" style="color:#001B6A"></i>
             </div>
             <div class="col-10 mb-2 pl-3">
-              <h5 class="feature-title font-bold mb-1">La tarifa móvil que te mereces</h5>
-              <p class="grey-text mt-2">Elige la tranquilidad de tener siempre gigas. La mejor tarifa móvil con hasta 85 GB.
+              <h5 class="feature-title font-bold mb-1">{{ 'home.mobile_deserve' | translate }}</h5>
+              <p class="grey-text mt-2">{{ 'home.mobile_deserve_desc' | translate }}
               </p>
             </div>
           </div>
@@ -660,8 +647,8 @@
               <i class="fas fa-hand-holding-usd fa-2x mb-1" aria-hidden="true" style="color:#001B6A"></i>
             </div>
             <div class="col-10 mb-2">
-              <h5 class="feature-title font-bold mb-1">Sencillez y ahorro</h5>
-              <p class="grey-text mt-2">Aquí solo encontraras tarifas sencillas donde pagas por lo que necesitas.
+              <h5 class="feature-title font-bold mb-1">{{ 'home.simple' | translate }}</h5>
+              <p class="grey-text mt-2">{{ 'home.simple_desc' | translate }}
               </p>
             </div>
           </div>
@@ -677,9 +664,8 @@
               <i class="fas fa-tags fa-2x mb-1" aria-hidden="true" style="color:#001B6A"></i>
             </div>
             <div class="col-10 mb-2">
-              <h5 class="feature-title font-bold mb-1">Precio para siempre</h5>
-              <p class="grey-text mt-2">Somos gente de palabra, si te decimos un precio, lo mantendremos para siempre.
-              </p>
+              <h5 class="feature-title font-bold mb-1">{{ 'home.price_for_ever' | translate }}</h5>
+              <p class="grey-text mt-2">{{ 'home.price_for_ever_desc' | translate }}              </p>
             </div>
           </div>
           <!--/Grid row-->
@@ -702,9 +688,8 @@
               <i class="fas fa-heart fa-2x mb-1" aria-hidden="true"  style="color:#001B6A"></i>
             </div>
             <div class="col-10 mb-2">
-              <h5 class="feature-title font-bold mb-1">Te queremos</h5>
-              <p class="grey-text mt-2">Si quieres venirte a Imagine, nos ocupamos de todo para que tú no tengas que hacer nada. Prometido.
-              </p>
+              <h5 class="feature-title font-bold mb-1">{{ 'home.love' | translate }}</h5>
+              <p class="grey-text mt-2">{{ 'home.love_desc' | translate }}              </p>
             </div>
           </div>
           <!--/Grid row-->
@@ -719,9 +704,8 @@
               <i class="fas fa-map-marker-alt fa-2x mb-1" aria-hidden="true" style="color:#001B6A"></i>
             </div>
             <div class="col-10 mb-2">
-              <h5 class="feature-title font-bold mb-1">Somos de aquí</h5>
-              <p class="grey-text mt-2">Sí, al igual que tú. Por eso hablamos tu idioma y entendemos tus dudas y necesidades.
-              </p>
+              <h5 class="feature-title font-bold mb-1">{{ 'home.from_here' | translate }}</h5>
+              <p class="grey-text mt-2">{{ 'home.from_here_desc' | translate }}              </p>
             </div>
           </div>
           <!--/Grid row-->
@@ -736,9 +720,8 @@
               <i class="fas fa-mobile fa-2x mb-1" aria-hidden="true" style="color:#001B6A"></i>
             </div>
             <div class="col-10 mb-2">
-              <h5 class="feature-title font-bold mb-1">Área «imagine»</h5>
-              <p class="grey-text mt-2">Controla tu consumo, descarga tus facturas, configura tus líneas y muchas cosas más.</p>
-            </div>
+              <h5 class="feature-title font-bold mb-1">{{ 'home.area_imagine' | translate }}</h5>
+              <p class="grey-text mt-2">{{ 'home.area_imagine_desc' | translate }}            </div>
           </div>
           <!--/Grid row-->
         </div>
@@ -752,7 +735,7 @@
     </section>
     <!--Section: More-->
 
-  </div>
+
 </main>
 <!--Main layout-->
 
