@@ -66,8 +66,9 @@
         "tv": "TV",
         "coverage": "Coverage",
         "login": "Login",
-        "logout": "Salir",
-        "profile": "Profile"
+        "logout": "Logout",
+        "profile": "Profile",
+        "register": "Register"
     },
     "footer": {
         "imagine": "Imagine",
@@ -240,6 +241,7 @@
         "generate_date": "Generate invoice from date:",
         "generate": "Generate",
         "minutes": "Minutes",
+        "consumption_desc": "This month you have used ",
         "gigaBytes": "GigaBytes"
     }
 }

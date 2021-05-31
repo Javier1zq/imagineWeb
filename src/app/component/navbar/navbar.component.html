@@ -106,6 +106,12 @@
             <i class="fas fa-user-alt-slash mr-2"></i>{{ 'navbar.logout' | translate }}
           </a>
         </li>
+        <li class="nav-item">
+          <a routerLink="/register" *ngIf='!(authService.isLoggedIn$ | async)' class="nav-link border border-light rounded">
+            <i class="far fa-user mr-2"></i>{{ 'navbar.register' | translate }}
+          </a>
+
+        </li>
       </ul>
 
     </div>

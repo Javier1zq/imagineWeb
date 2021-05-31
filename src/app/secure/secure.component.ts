@@ -43,12 +43,16 @@ export class SecureComponent implements OnInit {
               public authService: AuthService) { }
 
 
-  public generateInvoice(){
+  public generateInvoice(date: Date){
     const headers = new HttpHeaders({
       'Accept': 'application/json',
       'Authorization': `Bearer ${localStorage.getItem('token')}`
     });
-    this.http.post('http://46.25.181.72:8000/api/generateInvoice', this.user,{headers: headers}).subscribe(
+    const data = {
+      'user': this.user,
+      'date': date
+    };
+    this.http.post('http://localhost:8000/api/generateInvoice', data,{headers: headers}).subscribe(
           result=>{
             console.log("This is the base64 pdf:");
             console.log(result);
@@ -76,13 +80,13 @@ export class SecureComponent implements OnInit {
 
     });
     //console.log(localStorage.getItem('token'));
-    this.http.get('http://46.25.181.72:8000/api/user',{headers: headers}).subscribe(
+    this.http.get('http://localhost:8000/api/user',{headers: headers}).subscribe(
       result=>{
         this.user=result;
         console.log("This is the user:");
         console.log(this.user.DNI);
 
-        this.http.post('http://46.25.181.72:8000/api/services', this.user,{headers: headers}).subscribe(
+        this.http.post('http://localhost:8000/api/services', this.user,{headers: headers}).subscribe(
           result=>{
             this.services=<Services[]>result;
             console.log("this is the result of get api/services: ");
@@ -99,7 +103,7 @@ export class SecureComponent implements OnInit {
 
 
 
-                this.http.post('http://46.25.181.72:8000/api/data', this.user,{headers: headers}).subscribe(
+                this.http.post('http://localhost:8000/api/data', this.user,{headers: headers}).subscribe(
                   result=>{
                     this.data=<Data[]>result
                     console.log("this is the result of get api/data: ");
@@ -114,11 +118,11 @@ export class SecureComponent implements OnInit {
                       }
 
                       if (this.services[0].fiber) {
-                        this.fiberstring = 'This month you have used ' + this.data[0].fiber/1000 + ' (GigaBytes) out of unlimited';
+                        this.fiberstring =  this.data[0].fiber/1000+'';
 
                       }
                       if (this.services[0].phone) {
-                        this.phonestring = 'This month you have used ' + this.data[0].phone_minutes + ' minutes out of unlimited';
+                        this.phonestring = this.data[0].phone_minutes+'';
                       }
 
 

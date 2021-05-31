@@ -82,7 +82,7 @@
               <h1 class="text-center" >{{ 'secure.minute_consumption' | translate }}</h1>
             </div>
             <div class="col-7">
-              <p class="text-center" *ngIf="phonestring">{{phonestring}} {{ 'secure.minutes' | translate }}</p>
+              <h3 class="text-center" *ngIf="phonestring">{{ 'secure.consumption_desc' | translate }}  {{phonestring}} {{ 'secure.minutes' | translate }}</h3>
             </div>
 
           </div>
@@ -95,7 +95,7 @@
               <h1 class="text-center" >{{ 'secure.fiber_consumption' | translate }}</h1>
             </div>
             <div class="col-7">
-              <p class="text-center" *ngIf="fiberstring">{{fiberstring}} {{ 'secure.gigaBytes' | translate }}</p>
+              <h3 class="text-center" *ngIf="fiberstring">{{ 'secure.consumption_desc' | translate }} {{fiberstring}} {{ 'secure.gigaBytes' | translate }}</h3>
             </div>
 
           </div>
@@ -111,7 +111,7 @@
               <h3 class="text-center" >{{ 'secure.generate_date' | translate }} {{item.date}}</h3>
             </div>
             <div class="col-6 center">
-              <a   (click)='generateInvoice()' class="nav-link border border-light rounded text-center">
+              <a   (click)='generateInvoice(item.date)' class="nav-link border border-light rounded text-center">
                 <i class="fas fa-file-invoice mr-2" ></i>{{ 'secure.generate' | translate }}
               </a>
             </div>

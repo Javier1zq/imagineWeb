@@ -29,13 +29,13 @@ export class RegisterComponent implements OnInit {
       dataPlan:['0',[Validators.required]],
       fiberPlan:['0',[Validators.required]],
       tvPlan:[''],
-      iban:['',[Validators.required, ibanValidator("NL")]],
+      iban:['',[Validators.required]],
     }, {})
   }
   submit(){
     const formData = this.form.getRawValue();
     console.log(formData);
-    this.http.post('http://46.25.181.72:8000/api/register', formData).subscribe(
+    this.http.post('http://localhost:8000/api/register', formData).subscribe(
       (result) =>{
         console.log(result);
         this.successfulResponse = true;

@@ -67,7 +67,9 @@
         "coverage": "Cobertura",
         "login": "Inicio",
         "logout": "Salir",
-        "profile": "Perfil"
+        "profile": "Perfil",
+        "register": "Registro"
+
     },
     "footer": {
         "imagine": "Imagine",
@@ -119,7 +121,7 @@
 
     },
     "coverage": {
-        "review": "Revisa tu covertura!",
+        "review": "¡Revisa tu covertura!",
         "street": "Calle",
         "number": "Número",
         "local": "Localidad",
@@ -244,6 +246,7 @@
         "generate_date": "Generar factura de la fecha:",
         "generate": "Generar",
         "minutes": "Minutos",
+        "consumption_desc": "Este mes has utilizado ",
         "gigaBytes": "GigaBytes"
     }
 }
